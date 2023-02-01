@@ -8,12 +8,12 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  important: '#root',
   theme: {
     extend: {
       fontFamily: {
         bolder: 'var(--font-noto-bold)',
-        // regular: 'var(--font-noto-regular)'
+        medium: 'var(--font-noto-medium)',
+        regular: 'var(--font-noto-regular)'
       }
     },
   },
