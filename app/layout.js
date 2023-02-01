@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html dir="rtl">
       <head />
+      <h2 className="bg-red-200">s</h2>
       <body
         className={clsx(
           fontBold.variable,
