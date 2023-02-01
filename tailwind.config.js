@@ -13,7 +13,7 @@ module.exports = {
     extend: {
       fontFamily: {
         bolder: 'var(--font-noto-bold)',
-        regular: 'var(--font-noto-regular)'
+        // regular: 'var(--font-noto-regular)'
       }
     },
   },

@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         className={clsx(
           fontBold.variable,
           fontMedium.variable,
-          fontRegular.variable
+          // fontRegular.variable
         )}
       >
         {children}
