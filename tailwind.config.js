@@ -12,7 +12,6 @@ module.exports = {
     extend: {
       fontFamily: {
         bolder: 'var(--font-noto-bold)',
-        medium: 'var(--font-noto-medium)',
         regular: 'var(--font-noto-regular)'
       }
     },

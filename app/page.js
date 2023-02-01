@@ -15,17 +15,15 @@ const Head = tw.div`
 `;
 
 export default function Home() {
-
   return (
     <AppBar>
-
       <Container>
         <Head $border={true} $between={true}>
           <Title>المشتركين</Title> 
         </Head>
         <Head $border={false} $between={false}>
-          <button className="mb-[-20px] inline-flex h-11 items-center border-b-[4px] text-blue-700 border-blue-700 bg-transparent px-8 py-2 font-bolder hover:bg-brand-400 focus:outline-none focus:ring-0 focus:ring-brand-0 focus:ring-offset-0 text-[17px] mr-4">الإحصائيات</button>
-          <button className="mb-[-20px] inline-flex h-11 items-center border-b-[4px] text-gray-500 border-transparent bg-transparent px-8 py-2 font-bolder hover:bg-brand-400 focus:outline-none focus:ring-0 focus:ring-brand-0 focus:ring-offset-0 text-[17px]">التصنيفات</button>
+          <button className="mb-[-20px] select-none inline-flex h-11 items-center border-b-[4px] text-blue-700 border-blue-700 bg-transparent px-8 py-2 font-bolder hover:bg-brand-400 focus:outline-none focus:ring-0 focus:ring-brand-0 focus:ring-offset-0 text-[17px] mr-4">الإحصائيات</button>
+          <button className="mb-[-20px] select-none inline-flex h-11 items-center border-b-[4px] text-gray-500 border-transparent bg-transparent px-8 py-2 font-regular hover:bg-brand-400 focus:outline-none focus:ring-0 focus:ring-brand-0 focus:ring-offset-0 text-[17px]">التصنيفات</button>
         </Head>
       </Container>
     </AppBar>
