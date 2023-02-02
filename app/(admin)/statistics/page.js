@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div>الإحصائيات</div>
+    <div>statistics</div>
   )
 }

@@ -1,5 +1,6 @@
 import local from "@next/font/local";
 import clsx from "clsx";
+import { SubHeader } from "@/components";
 import "./globals.css";
 
 // inculde the fonts in app by @next/font
