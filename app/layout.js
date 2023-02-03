@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         className={clsx(
           fontBold.variable,
           fontRegular.variable,
-          'bg-gray-50'
+          'bg-gray-100'
         )}
       >
         {children}

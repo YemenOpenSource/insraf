@@ -3,7 +3,7 @@ import React from 'react'
 export default function page() {
   return (
     <div className="m-auto p-2 sm:p-6 flex flex-col items-center w-screen justify-center">
-      <div className="flex w-full flex-col justify-center mt-1 bg-[#fec63d] shadow-md rounded-sm p-4">
+      <div className="flex w-full flex-col justify-center bg-[#fec63d] shadow-md rounded-sm p-4">
         <div className="text-[#614c19]">
           <h1 className="font-bolder">
             بعض العمليات الدي تسهل عملك:

@@ -1,24 +1,32 @@
 import React from 'react'
+import { Statistics } from "@/components";
 
 export default function page() {
+  const stats = [
+    {
+      title: "عدد الطلاب",
+      number: 20,
+      color: "blue"
+    },
+    {
+      title: "التصنيفات",
+      number: 19,
+      color: "yellow"
+    },
+    {
+      title: "نسبة الحضور",
+      number: '%80',
+      color: "green"
+    },
+    {
+      title: "نسبة الغياب",
+      number: '%20',
+      color: "red"
+    }
+  ];
   return (
-    <div className="m-auto p-2 sm:p-6 flex flex-col items-center w-screen justify-center">
-      <div className="flex w-full flex-col justify-center mt-1 bg-blue-700 shadow-md rounded-sm p-4">
-        <div className="text-blue-50">
-          <h1 className="font-bolder">
-            ملخص لقاعدة البيانات وفقاً لبيانات التالية:
-          </h1>
-          <li className="mr-4">عدد الطلاب المضافين</li>
-          <li className="mr-4">متوسط العام لحضور</li>
-          <li className="mr-4">متوسط العام لغياب</li>
-          <li className="mr-4">التصنيفات</li>
-        </div>
-      </div>
-      <div className="flex w-full flex-col justify-center mt-3 bg-white shadow-md rounded-sm p-4">
-        <div className="h-[140px]">
-          table
-        </div>
-      </div>
-    </div>
+    <Statistics stats={stats}>
+      <h1>Cruve</h1>
+    </Statistics>
   )
 }

@@ -10,7 +10,7 @@ import Image from 'next/image';
 import insarf from '@/public/insarf.svg';
 import Tab from "./Tab";
 
-export default function SubHeader({ slug }) {
+export default function SubHeader() {
 
     const data = [
         {
