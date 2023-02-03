@@ -4,12 +4,9 @@ import {
     Nav,
     Container,
     Head,
-    Title,
-    Button
+    Title
 } from "@/ui/SubHeader";
-import { useSelectedLayoutSegment } from "next/navigation";
 import Image from 'next/image';
-import Link from "next/link";
 import insarf from '@/public/insarf.svg';
 import Tab from "./Tab";
 
@@ -28,7 +25,8 @@ export default function SubHeader({ slug }) {
             title: "الطلاب",
             slug: "students",
         }
-    ]
+    ];
+
     return (
         <AppBar>
             <Nav>
