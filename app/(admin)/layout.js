@@ -9,7 +9,7 @@ export default function layout({ children }) {
             <SubHeader />
             {children}
             <div className="flex justify-center w-screen">
-                <Image src={insarf_gray} className="w-[230px] select-none m-4" alt="insarf logo" priority />
+                <Image src={insarf_gray} className="w-[210px] select-none m-4" alt="insarf logo" priority />
             </div>
         </React.Fragment>
     )
