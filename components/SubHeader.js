@@ -11,48 +11,35 @@ import { useSelectedLayoutSegment } from "next/navigation";
 import Image from 'next/image';
 import Link from "next/link";
 import insarf from '@/public/insarf.svg';
+import Tab from "./Tab";
 
-export default function SubHeader() {
+export default function SubHeader({ slug }) {
 
-    const isActive = () => {
-        const segment = useSelectedLayoutSegment();
-        const items = []
-        if (segment == 'category') {
-            items.push({
-                category: true,
-                statistics: false,
-            })
-        } else {
-            items.push({
-                category: false,
-                statistics: true,
-            })
+    const data = [
+        {
+            title: "الإحصائيات",
+            slug: "statistics",
+        },
+        {
+            title: "التصنيفات",
+            slug: "category",
+        },
+        {
+            title: "الطلاب",
+            slug: "students",
         }
-        return items;
-    }
-
-    const [items] = isActive()
-    
+    ]
     return (
         <AppBar>
             <Nav>
                 <Image src={insarf} className="w-[130px] select-none m-4" alt="insarf logo" priority />
             </Nav>
             <Container>
-                <Head $border={true} $between={true}>
+                <Head $border={true} $between={true} $overflow={false}>
                     <Title>المشتركين</Title>
                 </Head>
-                <Head $border={false} $between={false}>
-                    <Button $active={items.statistics}>
-                        <Link href={'/statistics'}>
-                            الإحصائيات
-                        </Link>
-                    </Button>
-                    <Button $active={items.category}>
-                        <Link href={'/category'}>
-                            التصنيفات
-                        </Link>
-                    </Button>
+                <Head $border={false} $between={false} $overflow={true}>
+                    {data.map(data => <Tab key={data.slug} title={data.title} slug={data.slug} />)}
                 </Head>
             </Container>
         </AppBar>

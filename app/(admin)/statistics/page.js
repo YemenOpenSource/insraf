@@ -3,7 +3,7 @@ import React from 'react'
 export default function page() {
   return (
     <div className="m-auto p-2 sm:p-6 flex flex-col items-center w-screen justify-center">
-      <div className="flex w-full flex-col justify-center mt-3 bg-blue-700 shadow-md rounded-sm p-4">
+      <div className="flex w-full flex-col justify-center mt-1 bg-blue-700 shadow-md rounded-sm p-4">
         <div className="text-blue-50">
           <h1 className="font-bolder">
             ملخص لقاعدة البيانات وفقاً لبيانات التالية:

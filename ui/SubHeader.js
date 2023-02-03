@@ -11,6 +11,7 @@ export const Nav = tw.span`bg-blue-700 w-full h-16`;
 export const Head = tw.div`
   ${(p) => p.$border ? 'border-b border-b-slate-200' : 'border-none'}
   ${(p) => p.$between ? 'justify-between' : null}
+  ${(p) => p.$overflow ? 'overflow-x-auto' : null}
   flex 
   h-16 
   items-center 
