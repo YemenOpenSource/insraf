@@ -4,6 +4,7 @@ import { Button } from "@/ui/SubHeader";
 import { useSelectedLayoutSegment } from "next/navigation";
 
 export default function SubHeader({ slug, title }) {
+    
     const segment = useSelectedLayoutSegment();
     const isActive = slug === segment;
 
