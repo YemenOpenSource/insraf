@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { Statistics } from "@/components";
 
 export default function page() {
@@ -15,18 +15,18 @@ export default function page() {
     },
     {
       title: "نسبة الحضور",
-      number: '%80',
+      number: "%80",
       color: "green"
     },
     {
       title: "نسبة الغياب",
-      number: '%20',
+      number: "%20",
       color: "red"
     }
   ];
   return (
     <Statistics stats={stats}>
-      <h1>Cruve</h1>
+      <h1>لاتوجد بيانات حالياً</h1>
     </Statistics>
   )
 }

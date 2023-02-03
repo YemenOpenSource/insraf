@@ -14,7 +14,9 @@ export default function page() {
         </div>
       </div>
       <div className="flex w-full flex-col justify-center mt-3 bg-white shadow-md rounded-sm p-4">
-        <div className="h-[140px]">H</div>
+        <div className="h-[140px]">
+          <h1>لاتوجد بيانات حالياً</h1>
+        </div>
       </div>
     </div>
   )
