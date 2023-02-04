@@ -1,5 +1,5 @@
 import React from "react";
-import { Statistics } from "@/components";
+import { Statistics, Chart } from "@/components";
 
 export default function page() {
   const stats = [
@@ -26,7 +26,7 @@ export default function page() {
   ];
   return (
     <Statistics stats={stats}>
-      <h1>لاتوجد بيانات حالياً</h1>
+      <Chart />
     </Statistics>
   )
 }

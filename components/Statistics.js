@@ -20,8 +20,8 @@ export default function page({ children, stats }) {
                 </div>
             </div>
             <div className="flex w-full flex-col justify-center p-4">
-                <div className="grid grid-cols-1 bg-white rounded shadow h-[60px]">
-                    stats crve
+                <div className="grid grid-cols-1 bg-white rounded shadow h-full md:p-8">
+                    {children}
                 </div>
             </div>
         </div>
