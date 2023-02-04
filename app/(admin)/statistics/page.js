@@ -6,22 +6,22 @@ export default function page() {
     {
       title: "عدد الطلاب",
       number: 20,
-      color: "blue"
+      color: "bg-blue-600"
     },
     {
       title: "التصنيفات",
       number: 19,
-      color: "yellow"
+      color: "bg-yellow-600"
     },
     {
       title: "نسبة الحضور",
       number: "%80",
-      color: "green"
+      color: "bg-green-600"
     },
     {
       title: "نسبة الغياب",
       number: "%20",
-      color: "red"
+      color: "bg-red-600"
     }
   ];
   return (
