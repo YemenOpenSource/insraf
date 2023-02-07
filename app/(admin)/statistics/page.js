@@ -26,7 +26,6 @@ export default function page() {
   ];
   return (
     <Statistics stats={stats}>
-      <p className="bg-red-600"></p>
       <Chart />
     </Statistics>
   )
