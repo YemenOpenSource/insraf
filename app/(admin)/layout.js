@@ -7,8 +7,10 @@ export default function layout({ children }) {
     return (
         <React.Fragment>
             <SubHeader />
-            {children}
-            <div className="flex justify-center w-screen">
+            <div className="flex justify-center overflow-hidden">
+                {children}
+            </div>
+            <div className="flex justify-center">
                 <Image src={insarf_gray} className="w-[160px] select-none m-4" alt="insarf logo" priority />
             </div>
         </React.Fragment>

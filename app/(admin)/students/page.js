@@ -5,32 +5,98 @@ export default function page() {
 
     return (
         <div className="m-auto p-2 sm:p-6 flex flex-col items-center w-screen justify-center">
-            <div className="flex w-full flex-col justify-center p-4 bg-white">
+            <div className="flex w-full flex-col justify-center p-4">
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1">
-                    <table lassName="text-center ">
-                        <tbody>
-                            <tr className="text-gray-500 text-center font-bolder border-b border-gray-100">
-                                <th>الاسم</th>
-                                <th>رقم القيد</th>
-                                <th>القسم</th>
-                                <th>الإعدادات</th>
-                            </tr>
-                            <tr className="text-gray-600 text-center font-normalfont-normal mt-6">
-                                <th>منصور أحمد منصور</th>
-                                <th>18600</th>
-                                <th>B5EC</th>
-                                <th>
-                                    <button className="bg-gray-500 text-sm p-3 rounded-sm text-gray-800 ml-4 sm:ml-0">
-                                        إضافة طالب
+                    <div className="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
+                        <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                            <div className="w-full md:w-1/2">
+                                <form className="flex items-center">
+                                    <div className="relative w-full">
+                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg className="w-5 h-5 text-gray-500" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="البحث عن الطلاب" required="" />
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                                <div className="flex items-center space-x-3 w-full md:w-auto">
+                                    <button className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-white focus:outline-none bg-blue-700 rounded-lg">
+                                        بحث
                                     </button>
-                                </th>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-md text-left text-gray-500 font-medium">
+                                <thead className="text-md font-regular text-gray-600 border-b text-center">
+                                    <tr>
+                                        <th scope="col" className="px-4 py-3">اسم الطالب</th>
+                                        <th scope="col" className="px-4 py-3">رقم القيد</th>
+                                        <th scope="col" className="px-4 py-3">القسم</th>
+                                        <th scope="col" className="px-4 py-3">خيارات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr className="border-b text-center">
+                                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap">منصور أحمد منصور حيدرة</th>
+                                        <td className="px-4 py-3">18600</td>
+                                        <td className="px-4 py-3">B5EC</td>
+                                        <td className="px-4 py-3">
+                                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-blue-700 hover:text-blue-800 rounded-lg focus:outline-none" type="button">
+                                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr className="border-b text-center">
+                                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap">منصور أحمد منصور حيدرة</th>
+                                        <td className="px-4 py-3">18600</td>
+                                        <td className="px-4 py-3">B5EC</td>
+                                        <td className="px-4 py-3">
+                                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-blue-700 hover:text-blue-800 rounded-lg focus:outline-none" type="button">
+                                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr className="border-b text-center">
+                                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap">منصور أحمد منصور حيدرة</th>
+                                        <td className="px-4 py-3">18600</td>
+                                        <td className="px-4 py-3">B5EC</td>
+                                        <td className="px-4 py-3">
+                                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-blue-700 hover:text-blue-800 rounded-lg focus:outline-none" type="button">
+                                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr className="border-b text-center">
+                                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap">منصور أحمد منصور حيدرة</th>
+                                        <td className="px-4 py-3">18600</td>
+                                        <td className="px-4 py-3">B5EC</td>
+                                        <td className="px-4 py-3">
+                                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-blue-700 hover:text-blue-800 rounded-lg focus:outline-none" type="button">
+                                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav className="flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4">
+                            {/* sub header */}
+                        </nav>
+                    </div>
                 </div>
             </div>
-
         </div>
-
     )
 }
