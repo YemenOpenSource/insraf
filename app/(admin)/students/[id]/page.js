@@ -9,7 +9,7 @@ export default function page({ params }) {
     return (
         <div className="m-auto p-2 sm:p-4 flex flex-col items-center lg:w-2/4 w-screen justify-center">
             <div className="flex w-full flex-col justify-center px-0 sm:px-4">
-                <div className="bg-white rounded-lg shadow-lg border-blue-700 border-2">
+                <div className="bg-white rounded-lg shadow-lg">
                     <div className="flex items-center p-6 border-b border-blue-700 justify-between">
                         <div className="flex-shrink-0">
                             <Image src={insarf_blue} className="w-[160px] select-none" alt="insarf logo" priority />
