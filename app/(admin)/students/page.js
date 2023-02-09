@@ -22,12 +22,12 @@ export default function page() {
                     القسم الموجود في الجدول
                 "
             />
-            <div className="bg-white relative shadow-md sm:rounded-lg overflow-hidden">
+            <div className="bg-white shadow-md sm:rounded-lg overflow-hidden">
                 <SearchStudents search={setSearch} searchHander={searchHander} />
                 <Students>
                     {/* Head Start */}
                     <tr className="border-b text-center">
-                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right">منصور أحمد منصور حيدرة</th>
+                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">منصور أحمد منصور حيدرة</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B5EC</td>
                         <td className="px-4 py-3">
@@ -41,7 +41,7 @@ export default function page() {
                     {/* Head End */}
                     {/* Head Start */}
                     <tr className="border-b text-center">
-                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right">اسامة محمد علي أحمد</th>
+                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">اسامة محمد علي أحمد</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B4IT</td>
                         <td className="px-4 py-3">
@@ -55,7 +55,7 @@ export default function page() {
                     {/* Head End */}
                     {/* Head Start */}
                     <tr className="border-b text-center">
-                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right">أحمد محمد علي أحمد</th>
+                        <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">أحمد محمد علي أحمد</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B3E</td>
                         <td className="px-4 py-3">

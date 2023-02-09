@@ -25,7 +25,7 @@ export default function SearchStudents(props) {
             </div>
             <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                 <div className="flex items-center space-x-3 w-full md:w-auto">
-                    <button className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-white focus:outline-none bg-blue-700 rounded-lg"
+                    <button className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-bolder text-white focus:outline-none bg-blue-700 rounded-lg"
                         onClick={() => searchHander()}
                     >
                         بحث
