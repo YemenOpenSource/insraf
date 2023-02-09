@@ -19,7 +19,7 @@ export default function page({ params }) {
                         </div>
                     </div>
                     <div className="sm:p-6 p-4 select-none">
-                        <Image src={avater} className="w-[150px] select-none m-auto" alt="avater" priority />
+                        {/* <Image src={avater} className="w-[150px] select-none m-auto" alt="avater" priority /> */}
                         <div dir="rtl" className="text-right mb-8">
                         <p className="uppercase font-bolder w-full h-10 bg-blue-700 text-blue-50 leading-2 p-2">الاسم : منصور أحمد منصور</p>
                         <p className="uppercase w-full font-bolder h-10 bg-[#fff] text-blue-700 leading-2 p-2">رقم القيد :
