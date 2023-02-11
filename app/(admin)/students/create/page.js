@@ -61,17 +61,17 @@ export default function page() {
                                     <input type="password" name="pass" id="pass" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="رقم البطاقة الشخصية - الجواز السفر - شهادة الميلاد" required="" />
                                 </div>
                             </div>
-                            <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-bolder text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
-                                Add product
+                            <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-bolder text-center text-white bg-blue-700 rounded-lg hover:bg-primary-800">
+                                إنشـاء
                             </button>
                         </div>
                     </div>
                     <div className="md:col-start-10 md:col-end-13 order-1 md:order-2">
-                        <div className="bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2 mb-4">
-                            <Image src={avater} className="w-[80px] h-[80px] select-none" alt="qr" priority />
+                        <div className="flex justify-center bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2 mb-4">
+                            <Image src={avater} className="w-[180px] h-[180px] select-none" alt="qr" priority />
                         </div>
-                        <div className="bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2">
-                            <Image src={qr} className="w-[80px] h-[80px] select-none" alt="qr" priority />
+                        <div className="flex justify-center bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2">
+                            <Image src={qr} className="w-[180px] h-[180px] select-none" alt="qr" priority />
                         </div>
                     </div>
                 </div>
