@@ -68,7 +68,7 @@ export default function page() {
                     </div>
                     <div className="md:col-start-10 md:col-end-13 order-1 md:order-2">
                         <div className="bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2 mb-4">
-                        <Image src={avater} className="w-[80px] h-[80px] select-none" alt="qr" priority />
+                            <Image src={avater} className="w-[80px] h-[80px] select-none" alt="qr" priority />
                         </div>
                         <div className="bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2">
                             <Image src={qr} className="w-[80px] h-[80px] select-none" alt="qr" priority />
