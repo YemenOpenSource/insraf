@@ -7,6 +7,7 @@ import SearchStudents from "@/components/SearchStudents";
 import Container from "@/components/Container";
 import ShowStudent from "@/components/ShowStudent";
 import Attendance from "@/components/Attendance";
+import HeadStudent from "@/components/HeadStudent";
 
 export {
     SubHeader,
@@ -17,5 +18,6 @@ export {
     SearchStudents,
     Container,
     ShowStudent,
-    Attendance
+    Attendance,
+    HeadStudent
 }

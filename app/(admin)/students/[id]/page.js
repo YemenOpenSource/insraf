@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, ShowStudent, Attendance } from "@/components";
+import { Alert, ShowStudent, Attendance, HeadStudent } from "@/components";
 
 export default function page() {
     const user = {
@@ -29,6 +29,7 @@ export default function page() {
     return (
         <React.Fragment>
             <div className="m-auto p-2 sm:p-4 flex flex-col items-center lg:w-2/4 w-screen justify-center">
+                <HeadStudent />
                 <ShowStudent
                     name={user.name}
                     regNo={user.regNo}

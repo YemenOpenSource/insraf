@@ -14,6 +14,7 @@ specifiers:
   react: 18.2.0
   react-chartjs-2: ^5.2.0
   react-dom: 18.2.0
+  react-iconly: ^2.2.5
   styled-components: ^5.3.6
   tailwind-styled-components: ^2.2.0
   tailwindcss: ^3.2.4
@@ -30,6 +31,7 @@ dependencies:
   react: 18.2.0
   react-chartjs-2: 5.2.0_uxqdnqzacoapcp4mwytn5yclyu
   react-dom: 18.2.0_react@18.2.0
+  react-iconly: 2.2.5_react@18.2.0
   styled-components: 5.3.6_biqbaboplfbrettd7655fr4n2y
   tailwind-styled-components: 2.2.0_biqbaboplfbrettd7655fr4n2y
 
@@ -2357,6 +2359,15 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-iconly/2.2.5_react@18.2.0:
+    resolution: {integrity: sha512-c9WO/2TJltmyCVGj+/mdJZFoldfzYA8uUPmcml03D6YlBVWsCN5gq5Vb2k95qmeg+vSqMRvC69yghZvM0T4lKQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.8.6 || ^17
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-icons/4.7.1_react@18.2.0:
