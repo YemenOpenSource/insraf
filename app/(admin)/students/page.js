@@ -14,8 +14,8 @@ export default function page() {
             {/* Alert */}
             <Alert
                 title="عرض جميع الطلاب"
-                textColor="#614c19"
-                bgColor="#fec63d"
+                textColor="text-[#614c19]"
+                bgColor="bg-[#fec63d]"
                 body="
                     عرض جميع الطلاب الموجودين في قاعدة البيانات لجميع المستويات,
                     لتصفح الطلاب وفقاً للإقسام يمكنك الإنتقال لصفحة التصنيفات او الضغط على 
