@@ -5,6 +5,7 @@ import Alert from "@/components/Alert";
 import Students from "@/components/Students";
 import SearchStudents from "@/components/SearchStudents";
 import Container from "@/components/Container";
+import ShowStudent from "@/components/ShowStudent";
 
 export {
     SubHeader,
@@ -13,5 +14,6 @@ export {
     Alert,
     Students,
     SearchStudents,
-    Container
+    Container,
+    ShowStudent
 }
