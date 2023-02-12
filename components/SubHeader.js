@@ -38,7 +38,7 @@ export default function SubHeader() {
                 <Head $border={true} $between={true} $overflow={false}>
                     <Title>المشتركين</Title>
                     <Link href={"/students/create"}>
-                        <button className="bg-blue-700 text-sm p-3 rounded-sm text-white ml-4 sm:ml-0">
+                        <button className="bg-blue-700 text-sm p-3 rounded-sm text-white ml-4 sm:ml-0 font-bolder">
                             <Image src={AddUser} className="w-5 select-none inline-block mx-1 fill-white text-white" alt="insarf logo" priority />
                             إضافة طالب
                         </button>

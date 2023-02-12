@@ -21,7 +21,7 @@ export default function Attendance({ attendance }) {
                     <tr key={index}>
                         <th scope="col" className="px-4 py-3 font-sans text-right">{data?.subject}</th>
                         <th scope="col" className="px-4 py-3 text-blue-700 font-sans">{data?.dayNubmer}</th>
-                        <th scope="col" className={clsx("px-4 py-3 font-sans",
+                        <th scope="col" className={clsx("px-4 py-3 font-bolder",
                             data?.status == "طبيعي" ? "text-green-700" : null,
                             data?.status == "مستهنج" ? "text-red-700" : null,
                             data?.status == "بعذر" ? "text-blue-700" : null

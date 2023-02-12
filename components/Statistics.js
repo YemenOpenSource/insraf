@@ -7,7 +7,6 @@ import { Container } from "@/components";
 
 export default function page({ children, stats }) {
     return (
-
         <Container sm={2} md={4} lg={4} gap={2}>
             {stats.map((data, index) =>
                 <Card key={index}>
