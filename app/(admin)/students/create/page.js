@@ -1,10 +1,11 @@
+"use client";
 import Image from "next/image";
 import avater from "@/public/images/avater.png";
 import qr from "@/public/images/qr.png";
+import { EditSquare } from "react-iconly";
 
 export default function page() {
     return (
-
         <div className="m-auto p-2 sm:p-4 flex flex-col items-center w-screen justify-center">
             <div className="flex w-full flex-col justify-center md:px-4">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-2 selection:bg-blue-700 selection:text-white">
@@ -64,7 +65,13 @@ export default function page() {
                                     </p>
                                 </div>
                             </div>
-                            <button type="submit" className="inline-flex items-center px-5 py-2.5 mt-4 sm:mt-6 text-sm font-bolder text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+                            <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white sm:ml-0 font-bolder flex justify-center items-center mt-4">
+                                <EditSquare
+                                    style={{ marginLeft: 6 }}
+                                    primaryColor='white'
+                                    stroke='bold'
+                                    size="medium"
+                                />
                                 إنشـاء
                             </button>
                         </div>

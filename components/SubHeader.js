@@ -6,14 +6,13 @@ import {
     Head,
     Title
 } from "@/ui/SubHeader";
+import { AddUser } from "react-iconly";
 import Link from "next/link";
 import Image from 'next/image';
 import insarf from '@/public/insarf.svg';
-import AddUser from '@/public/icons/AddUser.svg';
 import Tab from "./Tab";
 
 export default function SubHeader() {
-
     const data = [
         {
             title: "الإحصائيات",
@@ -38,8 +37,13 @@ export default function SubHeader() {
                 <Head $border={true} $between={true} $overflow={false}>
                     <Title>المشتركين</Title>
                     <Link href={"/students/create"}>
-                        <button className="bg-blue-700 text-sm p-3 rounded-sm text-white ml-4 sm:ml-0 font-bolder">
-                            <Image src={AddUser} className="w-5 select-none inline-block mx-1 fill-white text-white" alt="insarf logo" priority />
+                        <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white ml-4 sm:ml-0 font-bolder flex justify-center items-center">
+                            <AddUser
+                                style={{ marginLeft: 6 }}
+                                primaryColor='white'
+                                stroke='bold'
+                                size="medium"
+                            />
                             إضافة طالب
                         </button>
                     </Link>

@@ -1,7 +1,8 @@
 "use client";
+import Link from "next/link";
 import { Alert, Students, SearchStudents, Container } from "@/components";
 import { useState } from "react";
-
+import { Show } from "react-iconly";
 export default function page() {
     const [search, setSearch] = useState()
 
@@ -30,12 +31,16 @@ export default function page() {
                         <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">منصور أحمد منصور حيدرة</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B5EC</td>
-                        <td className="px-4 py-3">
-                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none" type="button">
-                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                </svg>
-                            </button>
+                        <td className="px-4 py-3 flex justify-center">
+                            <Link href={"students/1"}>
+                                <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">
+                                    <Show
+                                        primaryColor='white'
+                                        stroke='bold'
+                                        size="medium"
+                                    />
+                                </button>
+                            </Link>
                         </td>
                     </tr>
                     {/* Head End */}
@@ -44,12 +49,16 @@ export default function page() {
                         <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">اسامة محمد علي أحمد</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B4IT</td>
-                        <td className="px-4 py-3">
-                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none" type="button">
-                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                </svg>
-                            </button>
+                        <td className="px-4 py-3 flex justify-center">
+                            <Link href={"students/1"}>
+                                <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">
+                                    <Show
+                                        primaryColor='white'
+                                        stroke='bold'
+                                        size="medium"
+                                    />
+                                </button>
+                            </Link>
                         </td>
                     </tr>
                     {/* Head End */}
@@ -58,12 +67,16 @@ export default function page() {
                         <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">أحمد محمد علي أحمد</th>
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B3E</td>
-                        <td className="px-4 py-3">
-                            <button className="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none" type="button">
-                                <svg className="w-5 h-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                                </svg>
-                            </button>
+                        <td className="px-4 py-3 flex justify-center">
+                            <Link href={"students/1"}>
+                                <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">
+                                    <Show
+                                        primaryColor='white'
+                                        stroke='bold'
+                                        size="medium"
+                                    />
+                                </button>
+                            </Link>
                         </td>
                     </tr>
                     {/* Head End */}
