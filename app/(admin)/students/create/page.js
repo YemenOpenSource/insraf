@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import avater from "@/public/images/avater.png";
+import avater from "@/public/images/avater.svg";
 import qr from "@/public/images/qr.png";
-import { EditSquare } from "react-iconly";
+import { EditSquare, Setting } from "react-iconly";
 
 export default function page() {
     return (
@@ -40,7 +40,7 @@ export default function page() {
                                 </div>
                                 <div className="w-full">
                                     <label className="block mb-2 text-sm font-bolder text-gray-900">الشعبة</label>
-                                    <input type="text" id="block" className="bg-gray-50 font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
+                                    <input type="text" id="block" className="bg-gray-50 font-sans border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
                                 </div>
                                 <div className="w-full">
                                     <label className="block mb-2 text-sm font-bolder text-gray-900">تاريخ الميلاد</label>
@@ -77,10 +77,18 @@ export default function page() {
                         </div>
                     </div>
                     <div className="md:col-start-10 md:col-end-13 order-1 md:order-2">
-                        <div className="flex justify-center bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2 mb-4">
+                        <div className="flex justify-center relative bg-white rounded shadow md:col-start-10 md:col-end-13 order-1 md:order-2 mb-4">
                             <Image src={avater} className="w-[180px] h-[180px] select-none" alt="qr" priority />
+                            <div className="bg-blue-700 select-none absolute w-full h-full rounded opacity-[0.8] text-white text-center leading-3 flex flex-col justify-center items-center">
+                                <Setting
+                                    primaryColor='white'
+                                    stroke='bold'
+                                    size="large"
+                                />
+                                الإعدادات
+                            </div>
                         </div>
-                        <div className="flex justify-center bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2">
+                        <div className="flex justify-center bg-white rounded shadow p-4 md:p-8 md:col-start-10 md:col-end-13 order-1 md:order-2 font-bolder">
                             <Image src={qr} className="w-[180px] h-[180px] select-none" alt="qr" priority />
                         </div>
                     </div>
