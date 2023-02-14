@@ -15,9 +15,12 @@ export default function page({ children, stats }) {
                     <span className={`absolute top-0 left-0 m-4 block h-4 w-4 rounded-full ${data.color}`}></span>
                 </Card>
             )}
-            <span className="bg-white rounded shadow p-4 md:p-8 col-start-1 col-span-2 md:col-span-4">
-                {children}
-            </span>
+            <span className="col-start-1 col-span-2 md:col-span-4"></span>
+            {/*
+                <span className="bg-white rounded shadow p-4 md:p-8 col-start-1 col-span-2 md:col-span-4">
+                    {children}
+                </span> 
+            */}
         </Container>
 
     )

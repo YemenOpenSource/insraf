@@ -16,7 +16,7 @@ export default function Attendance({ attendance }) {
                     <th scope="col" className="px-4 py-3 font-sans text-right"></th>
                 </tr>
             </tbody>
-            <tfoot className="text-md font-regular text-gray-600 text-center bg-white rounded-lg shadow-lg selection:bg-blue-700 selection:text-white">
+            <tfoot className="text-md font-regular text-gray-600 text-center bg-white rounded-lg shadow selection:bg-blue-700 selection:text-white">
                 {attendance?.map((data, index) =>
                     <tr key={index}>
                         <th scope="col" className="px-4 py-3 font-sans text-right">{data?.subject}</th>

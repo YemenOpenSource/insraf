@@ -1,5 +1,5 @@
 import React from "react";
-import { Statistics, Chart } from "@/components";
+import { Statistics } from "@/components";
 
 export default function page() {
   const stats = [
@@ -15,18 +15,16 @@ export default function page() {
     },
     {
       title: "نسبة الحضور",
-      number: "%80",
+      number: "80",
       color: "bg-green-600"
     },
     {
       title: "نسبة الغياب",
-      number: "%20",
+      number: "20",
       color: "bg-red-600"
     }
   ];
   return (
-    <Statistics stats={stats}>
-      <Chart />
-    </Statistics>
+    <Statistics stats={stats} />
   )
 }

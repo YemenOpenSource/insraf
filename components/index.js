@@ -8,6 +8,9 @@ import Container from "@/components/Container";
 import ShowStudent from "@/components/ShowStudent";
 import Attendance from "@/components/Attendance";
 import HeadStudent from "@/components/HeadStudent";
+import CreateStudent from "@/components/CreateStudent";
+import Avater from "@/components/Avater";
+import QR from "@/components/QR";
 
 export {
     SubHeader,
@@ -19,5 +22,8 @@ export {
     Container,
     ShowStudent,
     Attendance,
-    HeadStudent
+    HeadStudent,
+    CreateStudent,
+    Avater,
+    QR
 }
