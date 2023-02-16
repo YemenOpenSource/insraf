@@ -1,12 +1,27 @@
-import React from "react";
+"use client"
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import insarf_gray from "@/public/insarf_gray.svg";
-import { SubHeader } from "@/components";
+import { SubHeader, Breadcrumb } from "@/components";
+import { usePathname } from 'next/navigation';
 
 export default function layout({ children }) {
+    const router = usePathname();
+    const [breadcrumbs, setBreadcrumbs] = useState([]);
+    
+    useEffect(() => {
+        const pathSegments = router.split('/').filter((x) => x);
+        const result = pathSegments.map((segment, i) => ({
+            name: segment,
+            href: `/${pathSegments.slice(0, i + 1).join('/')}`,
+        }));
+        setBreadcrumbs(result);
+    }, [router]);
+
     return (
         <React.Fragment>
             <SubHeader />
+            <Breadcrumb breadcrumbs={breadcrumbs} />
             <div className="flex justify-center overflow-hidden">
                 {children}
             </div>

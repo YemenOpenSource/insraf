@@ -52,7 +52,7 @@ export default function page() {
 
   return (
     <div className="m-auto p-2 sm:p-4 flex flex-col items-center w-screen justify-center">
-      <div className="flex w-full flex-col justify-center">
+      <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 selection:bg-blue-700 selection:text-white">
           {
             tags.map(({ id, name, description }) =>

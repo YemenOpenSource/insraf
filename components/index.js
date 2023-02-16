@@ -12,6 +12,7 @@ import CreateStudent from "@/components/CreateStudent";
 import Avater from "@/components/Avater";
 import QR from "@/components/QR";
 import Category from "@/components/Category";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export {
     SubHeader,
@@ -27,5 +28,6 @@ export {
     CreateStudent,
     Avater,
     QR,
-    Category
+    Category,
+    Breadcrumb
 }
