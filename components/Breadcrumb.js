@@ -16,14 +16,14 @@ export default function Breadcrumb({ breadcrumbs }) {
                             <li key={i}>
                                 <div className="flex items-center">
                                     <Link href={breadcrumb.href}
-                                        className={clsx("ml-1 text-xl hover:text-blue-600 md:ml-2 capitalize",
-                                            active[active.length - 1] == breadcrumb.name ? "text-blue-700 font-bold" : "font-medium text-gray-700"
+                                        className={clsx("ml-1 text-xl hover:text-blue-600 md:ml-2",
+                                            active[active.length - 1] == breadcrumb.active ? "text-blue-700 font-bolder" : "font-bolder text-gray-700"
                                         )}
                                     >
                                         {breadcrumb.name}
                                     </Link>
                                     {
-                                        active[active.length - 1] != breadcrumb.name && (
+                                        active[active.length - 1] != breadcrumb.active && (
                                             <ChevronLeft
                                                 style={{ marginLeft: 6 }}
                                                 primaryColor="blue"

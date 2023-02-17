@@ -9,10 +9,20 @@ export default function layout({ children }) {
     const router = usePathname();
     const [breadcrumbs, setBreadcrumbs] = useState([]);
     
+    const convertBreadcrumb = string => {
+        return string
+        .replace('students', 'الطلاب')
+        .replace('statistics', 'الإحصائيات')
+        .replace('create', 'إضافة طالب')
+        .replace('category', 'التصنيفات')
+        .replace('edit', 'تعديل')
+    };
+
     useEffect(() => {
         const pathSegments = router.split('/').filter((x) => x);
         const result = pathSegments.map((segment, i) => ({
-            name: segment,
+            name: convertBreadcrumb(segment),
+            active: segment,
             href: `/${pathSegments.slice(0, i + 1).join('/')}`,
         }));
         setBreadcrumbs(result);

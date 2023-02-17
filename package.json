@@ -21,9 +21,7 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0",
     "react-iconly": "^2.2.5",
-    "styled-components": "^5.3.6",
-    "tailwind-styled-components": "^2.2.0",
-    "use-react-router-breadcrumbs": "^4.0.1"
+    "tailwind-styled-components": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
