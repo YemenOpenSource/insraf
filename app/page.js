@@ -1,38 +1,10 @@
-"use client"
-import { useSession, signIn, signOut } from "next-auth/react"
-import { useState } from "react"
+import React from 'react'
 
-export default function Component() {
-  const [username, setUserName] = useState()
-  const [password, setPassword] = useState()
-
-  const { data: session } = useSession()
-
-  const handlerlogin = async (e) => {
-    const data = await signIn('credentials', {
-      redirect: false,
-      username,
-      password
-    })
-    console.log(data)
-  }
-
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.username} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
+export default function page() {
   return (
-    <>
-        <div>
-          <input type={"text"} onChange={({ target }) => setUserName(target.value)} />
-          <input type={"text"} onChange={({ target }) => setPassword(target.value)} />
-        </div>
-        <button onClick={() => handlerlogin()}>Sign </button>
-
-    </>
+    <div>
+      <h1 className="bg-red-700 font-bolder text-center">موقع تحت الإنتاج</h1>
+      <p className="bg-gray-700 font-bolder text-center">MAO Team</p>
+    </div>
   )
 }
