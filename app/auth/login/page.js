@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useState } from "react"
 
 export default function Component() {
-  const [username, setUserName] = useState()
+  const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
   const { data: session } = useSession()
@@ -11,16 +11,15 @@ export default function Component() {
   const handlerlogin = async (e) => {
     const data = await signIn('credentials', {
       redirect: false,
-      username,
+      email,
       password
     })
-    console.log(data)
   }
-
+console.log(session)
   if (session) {
     return (
       <>
-        Signed in as {session.user.username} <br />
+        Signed in as {session.user.name} <br />
         <button onClick={() => signOut()}>Sign out</button>
       </>
     )
@@ -28,7 +27,7 @@ export default function Component() {
   return (
     <>
         <div>
-          <input type={"text"} onChange={({ target }) => setUserName(target.value)} />
+          <input type={"text"} onChange={({ target }) => setEmail(target.value)} placeholder="e" />
           <input type={"text"} onChange={({ target }) => setPassword(target.value)} />
         </div>
         <button onClick={() => handlerlogin()}>Sign </button>
