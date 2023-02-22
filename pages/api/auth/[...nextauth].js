@@ -5,7 +5,13 @@ import CredentialsProvider from "next-auth/providers/credentials";
 
 const options = {
   session: {
-    strategy: "jwt"
+    // Choose how you want to save the user session.
+    // The default is `"jwt"`, an encrypted JWT (JWE) stored in the session cookie.
+    // If you use an `adapter` however, we default it to `"database"` instead.
+    // You can still force a JWT session by explicitly defining `"jwt"`.
+    // When using `"database"`, the session cookie will only contain a `sessionToken` value,
+    // which is used to look up the session in the database.
+    strategy: "jwt",
   },
   providers: [
     CredentialsProvider({
@@ -23,7 +29,7 @@ const options = {
         const user = await prisma.user.findUnique({ where: { email } });
         if (!user) throw new Error("الحساب غير موجود !");
         const isEqual = await bcrypt.compare(password, user.password);
-        if (!isEqual) throw new Error("غلط في الايميا او كلمة المرور");
+        if (!isEqual) throw new Error("خطأ في البريد الإكتروني او كلمة المرور");
         
         if (user) {
           // Any object returned will be saved in `user` property of the JWT
@@ -35,7 +41,16 @@ const options = {
         }
       }
     })
-  ]
+  ],
+  pages: {
+    signIn: "/auth/login",
+  },
+  jwt: {
+    signingKey: {"kty":"oct","kid":"--","alg":"HS256","k":"--"},
+    verificationOptions: {
+      algorithms: ["HS256"]
+    }
+  }
 }
 
 export default (req, res) => NextAuth(req, res, options)

@@ -1,8 +1,7 @@
 "use client";
 import local from "@next/font/local";
 import clsx from "clsx";
-import { SessionProvider as AuthProvider } from 'next-auth/react';
-
+import { SessionProvider as AuthProvider, signIn } from 'next-auth/react';
 import "./globals.css";
 
 // inculde the fonts in app by @next/font

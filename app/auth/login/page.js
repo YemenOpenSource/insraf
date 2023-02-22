@@ -1,37 +1,28 @@
 "use client";
-import { useSession, signIn, signOut } from "next-auth/react"
-import { useState } from "react"
+import { useState } from "react";
+import { useSession, signIn } from "next-auth/react"
+import { Success } from "@/components";
 
 export default function Component() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
-
+  const [error, setError] = useState()
   const { data: session } = useSession()
 
-  const handlerlogin = async (e) => {
+  const hendlerAuth = async () => {
     const data = await signIn('credentials', {
       redirect: false,
       email,
-      password
+      password,
     })
+    // Error 
+    if (data.error) setError(data.error)
   }
-console.log(session)
-  if (session) {
-    return (
-      <>
-        Signed in as {session.user.name} <br />
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
-    )
-  }
-  return (
-    <>
-        <div>
-          <input type={"text"} onChange={({ target }) => setEmail(target.value)} placeholder="e" />
-          <input type={"text"} onChange={({ target }) => setPassword(target.value)} />
-        </div>
-        <button onClick={() => handlerlogin()}>Sign </button>
 
-    </>
+  // if (session) return <Success session={session} />
+
+  return (
+
+    <Success />
   )
 }

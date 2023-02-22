@@ -13,6 +13,7 @@ import Avater from "@/components/Avater";
 import QR from "@/components/QR";
 import Category from "@/components/Category";
 import Breadcrumb from "@/components/Breadcrumb";
+import Success from "@/components/Success";
 
 export {
     SubHeader,
@@ -29,5 +30,6 @@ export {
     Avater,
     QR,
     Category,
-    Breadcrumb
+    Breadcrumb,
+    Success
 }
