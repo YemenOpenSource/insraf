@@ -14,7 +14,7 @@ export default function Success() {
     return (
         <Container>
             <Main>
-                <h1 className="text-center font-regular text-lg">مرحباً بعودتك مجدداً : <span className="font-bolder">منصور</span> 👋</h1>
+                <h1 className="text-center font-regular text-lg">مرحباً بعودتك : <span className="font-bolder">منصور</span> 👋</h1>
                 <Button>
                     إدارة الموقع
                 </Button>
