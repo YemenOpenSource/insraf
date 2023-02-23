@@ -15,6 +15,10 @@ import Tab from "./Tab";
 export default function SubHeader() {
     const data = [
         {
+            title: "الترحيب",
+            slug: null,
+        },
+        {
             title: "الإحصائيات",
             slug: "statistics",
         },
@@ -36,7 +40,7 @@ export default function SubHeader() {
             <Container>
                 <Head $border={true} $between={true} $overflow={false}>
                     <Title>المشتركين</Title>
-                    <Link href={"/students/create"}>
+                    <Link href={"/admin/students/create"}>
                         <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white ml-4 sm:ml-0 font-bolder flex justify-center items-center">
                             <AddUser
                                 style={{ marginLeft: 6 }}

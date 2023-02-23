@@ -11,11 +11,12 @@ export default function layout({ children }) {
 
     const convertBreadcrumb = string => {
         return string
-            .replace('students', 'الطلاب')
-            .replace('statistics', 'الإحصائيات')
-            .replace('create', 'إضافة طالب')
-            .replace('category', 'التصنيفات')
-            .replace('edit', 'تعديل')
+        .replace('admin', 'لوحة التحكم')
+        .replace('students', 'الطلاب')
+        .replace('statistics', 'الإحصائيات')
+        .replace('create', 'إضافة طالب')
+        .replace('category', 'التصنيفات')
+        .replace('edit', 'تعديل')
     };
 
     useEffect(() => {
