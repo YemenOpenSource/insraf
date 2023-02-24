@@ -11,7 +11,7 @@ export default function layout({ children }) {
 
     const convertBreadcrumb = string => {
         return string
-        .replace('admin', 'لوحة التحكم')
+        .replace('admin', 'إدارة')
         .replace('students', 'الطلاب')
         .replace('statistics', 'الإحصائيات')
         .replace('create', 'إضافة طالب')

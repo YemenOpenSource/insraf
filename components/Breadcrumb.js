@@ -16,7 +16,7 @@ export default function Breadcrumb({ breadcrumbs }) {
                             <li key={i}>
                                 <div className="flex items-center">
                                     <Link href={breadcrumb.href}
-                                        className={clsx("ml-1 text-xl hover:text-blue-600 md:ml-2",
+                                        className={clsx("ml-1 text-md sm:text-xl hover:text-blue-600 md:ml-2 cursor-pointer select-none",
                                             active[active.length - 1] == breadcrumb.active ? "text-blue-700 font-bolder" : "font-bolder text-gray-700"
                                         )}
                                     >

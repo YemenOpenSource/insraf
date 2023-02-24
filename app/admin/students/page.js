@@ -32,7 +32,7 @@ export default function page() {
                         <td className="px-4 py-3">18600</td>
                         <td className="px-4 py-3 underline text-blue-700 font-bold cursor-pointer">B5EC</td>
                         <td className="px-4 py-3 flex justify-center">
-                            <Link href={"students/1"}>
+                            <Link href={"/admin/students/1"}>
                                 <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">
                                     <Show
                                         primaryColor='white'

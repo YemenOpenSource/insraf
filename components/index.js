@@ -14,6 +14,7 @@ import QR from "@/components/QR";
 import Category from "@/components/Category";
 import Breadcrumb from "@/components/Breadcrumb";
 import Success from "@/components/Success";
+import Login from "@/components/Login";
 
 export {
     SubHeader,
@@ -31,5 +32,6 @@ export {
     QR,
     Category,
     Breadcrumb,
-    Success
+    Success,
+    Login
 }
