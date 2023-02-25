@@ -2,17 +2,11 @@
 export default function Login() {
     return (
         <div className="min-h-full flex flex-col justify-center p-3 sm:p-0 font-bolder">
-            <div className="sm:mx-auto sm:w-full sm:max-w-md mt-8 select-none">
+            <div className="sm:mx-auto sm:w-full sm:max-w-md mt-4 select-none">
                 <h2 className="text-center text-3xl font-extrabold text-gray-900">مرحباً بك 🚀👋</h2>
-                <p className="text-center text-sm text-gray-600">
-                    أو{' '}
-                    <a href="#" className="font-medium text-blue-600 hover:text-indigo-500">
-                        إنشاء حساب حديد
-                    </a>
-                </p>
             </div>
 
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div className="my-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                         البريد الإكتروني
