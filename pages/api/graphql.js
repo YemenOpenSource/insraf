@@ -16,7 +16,7 @@ export default startServerAndCreateNextHandler(server, {
     if (auth) {
       const decoded = jwt.verify(auth, process.env.JWT);
       const user = await prisma.user.findUnique({ where: { id: decoded.id } });
-      return[];
+      return { user };
     }
   },
 });
