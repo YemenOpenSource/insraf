@@ -1,6 +1,7 @@
 "use client";
 import tw from "tailwind-styled-components";
 import Image from "next/image";
+import Link from "next/link";
 import insarf_icon from "@/public/insarf_icon.svg";
 import { useState } from "react";
 import { Login } from "@/components";
@@ -22,7 +23,7 @@ export default function Component() {
           <div className="px-4 py-5 sm:px-6">
             <Image src={insarf_icon} className="w-[100px] select-none mx-auto" alt="insarf logo" priority />
           </div>
-          <Login />
+          <Login email={setEmail} password={setPassword}/>
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0">
             <Button
             >
@@ -37,9 +38,9 @@ export default function Component() {
                   <span className="px-3 bg-white text-md font-medium font-bolder text-gray-700">أو{' '}</span>
                 </div>
               </div>
-              <a href="#" className="font-medium text-blue-600 hover:text-indigo-500 text-[16px]">
+              <Link href="/auth/register" className="font-medium text-blue-600 hover:text-indigo-500 text-[16px]">
                 إنشاء حساب حديد
-              </a>
+              </Link>
             </div>
           </div>
         </div>

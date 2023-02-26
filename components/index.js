@@ -15,6 +15,7 @@ import Category from "@/components/Category";
 import Breadcrumb from "@/components/Breadcrumb";
 import Success from "@/components/Success";
 import Login from "@/components/Login";
+import Register from "@/components/Register";
 
 export {
     SubHeader,
@@ -33,5 +34,6 @@ export {
     Category,
     Breadcrumb,
     Success,
-    Login
+    Login,
+    Register
 }

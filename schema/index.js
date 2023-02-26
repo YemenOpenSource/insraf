@@ -8,6 +8,12 @@ export const typeDefs = gql`
     password: String!
   }
 
+  type AuthData {
+    userId: ID!
+    token: String!
+    name: String!
+  }
+
   input UserInput {
     name: String!
     email: String!
@@ -15,11 +21,11 @@ export const typeDefs = gql`
   }
 
   type Query {
-    hello: String
-    welcome: String
+    users: [User]
   }
 
   type Mutation {
-    createUser(userInput: UserInput!): User
+    createUser(userInput: UserInput!): AuthData
+    login(email: String!, password: String!): AuthData
   }
 `;

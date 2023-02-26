@@ -1,5 +1,6 @@
 import prisma from "lib/prisma";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 import { GraphQLError } from 'graphql';
 
 export const auth = {
@@ -13,10 +14,33 @@ export const auth = {
         const user = await prisma.user.create({
           data: { name, email, password: hashed },
         });
-        return user
+        const userForToken = {
+          email: user.email,
+          id: user.id,
+        };
+        return {
+          userId: user.id,
+          token: jwt.sign(userForToken, process.env.JWT),
+          name: user.name,
+        };
       } catch (error) {
         throw error;
       }
-    }
+    },
+    login: async (_, { email, password }) => {
+      const user = await prisma.user.findUnique({ where: { email } });
+      if (!user) throw new GraphQLError("المستخدم غير موجود !");
+      const isEqual = await bcrypt.compare(password, user.password);
+      if (!isEqual) throw new GraphQLError("كلمة السر غير متطابقة");
+      const userForToken = {
+        email: user.email,
+        id: user.id,
+      };
+      return {
+        userId: user.id,
+        token: jwt.sign(userForToken, process.env.JWT),
+        name: user.name,
+      };
+    },
   }
 };
