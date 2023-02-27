@@ -3,8 +3,10 @@ import tw from "tailwind-styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import insarf_icon from "@/public/icon.svg";
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { Login } from "@/components";
+import { LOGIN } from "@/hooks/mutations";
 
 const Button = tw.button`
   w-full mb-5 flex justify-center py-2 px-4 border border-transparent 
@@ -16,6 +18,14 @@ export default function Component() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
+  const [login] = useMutation(LOGIN, {
+    onCompleted: (data) => {
+      // document.cookie = `token = ${data.login.token};`; setAlert(error.message)
+      console.log(data)
+    },
+    onError: (error) => console.log(error),
+  });
+
   return (
     <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 sm:my-[52px]">
       <div className="max-w-3xl mx-auto p-3">
@@ -23,9 +33,17 @@ export default function Component() {
           <div className="px-4 py-5 sm:px-6">
             <Image src={insarf_icon} className="w-[100px] select-none mx-auto" alt="insarf logo" priority />
           </div>
-          <Login email={setEmail} password={setPassword}/>
+          <Login email={setEmail} password={setPassword} />
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0">
             <Button
+              onClick={() =>
+                login({
+                  variables: {
+                    email: email.trim(),
+                    password: password.trim(),
+                  },
+                })
+              }
             >
               تسجيل الدخول
             </Button>

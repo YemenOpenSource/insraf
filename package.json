@@ -17,6 +17,8 @@
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.2.0",
     "clsx": "^1.2.1",
+    "cookie": "^0.5.0",
+    "cookies-next": "^2.1.1",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
     "formik": "^2.2.9",

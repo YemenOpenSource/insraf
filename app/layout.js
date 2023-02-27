@@ -7,8 +7,8 @@ import {
   ApolloProvider,
   createHttpLink
 } from "@apollo/client";
-import { AuthContextProvider } from "contexts";
 import { setContext } from "@apollo/client/link/context";
+import { getCookie } from 'cookies-next';
 import "./globals.css";
 
 // inculde the fonts in app by @next/font
@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   }); 
 
   const authLink = setContext((_, { headers }) => {
-    // const token = cookies.get("token");
+    const token = getCookie("token")
     return {
       headers: {
         ...headers,
@@ -46,9 +46,9 @@ export default function RootLayout({ children }) {
           'bg-gray-100'
         )}
       >
-        <AuthContextProvider client={client}>
+        <ApolloProvider client={client}>
           {children}
-        </AuthContextProvider>
+        </ApolloProvider>
       </body>
     </html>
   )
