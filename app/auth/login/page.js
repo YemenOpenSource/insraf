@@ -2,7 +2,7 @@
 import tw from "tailwind-styled-components";
 import Image from "next/image";
 import Link from "next/link";
-import insarf_icon from "@/public/insarf_icon.svg";
+import insarf_icon from "@/public/icon.svg";
 import { useState } from "react";
 import { Login } from "@/components";
 

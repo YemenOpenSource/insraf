@@ -1,5 +1,6 @@
 import prisma from "lib/prisma";
 import jwt from "jsonwebtoken";
+import { NextRequest } from "next/server";
 import { ApolloServer } from "@apollo/server";
 import { typeDefs } from "@/schema";
 import { resolvers } from "@/resolvers";
@@ -11,7 +12,7 @@ const server = new ApolloServer({
 });
 
 export default startServerAndCreateNextHandler(server, {
-  context: async ({ req }) => {
+   context: async function (req = NextRequest) {
     const auth = req ? req.headers.authorization : null;
     if (auth) {
       const decoded = jwt.verify(auth, process.env.JWT);

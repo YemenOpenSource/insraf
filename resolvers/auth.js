@@ -1,7 +1,7 @@
 import prisma from "lib/prisma";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { GraphQLError } from 'graphql';
+import { GraphQLError } from "graphql";
 
 export const auth = {
   Mutation: {

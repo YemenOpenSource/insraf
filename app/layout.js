@@ -1,14 +1,42 @@
 "use client";
 import local from "@next/font/local";
 import clsx from "clsx";
-import { SessionProvider as AuthProvider, signIn } from 'next-auth/react';
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink
+} from "@apollo/client";
+import { AuthContextProvider } from "contexts";
+import { setContext } from "@apollo/client/link/context";
 import "./globals.css";
 
 // inculde the fonts in app by @next/font
 const fontBold = local({ src: './fonts/NotoSansArabicBold.woff', variable: '--font-noto-bold' });
 const fontRegular = local({ src: './fonts/NotoSansArabicMedium.woff', variable: '--font-noto-regular' });
 
-export default function RootLayout({ children, session }) {
+export default function RootLayout({ children }) {
+  
+  const httpLink = createHttpLink({
+    uri: "/api/graphql",
+    credentials: "same-origin",
+  }); 
+
+  const authLink = setContext((_, { headers }) => {
+    // const token = cookies.get("token");
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `${token}` : "",
+      },
+    };
+  });
+
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
+
   return (
     <html dir="rtl">
       <body
@@ -18,9 +46,9 @@ export default function RootLayout({ children, session }) {
           'bg-gray-100'
         )}
       >
-        <AuthProvider session={session}>
+        <AuthContextProvider client={client}>
           {children}
-        </AuthProvider>
+        </AuthContextProvider>
       </body>
     </html>
   )
