@@ -3,7 +3,7 @@ import prisma from "lib/prisma"
 export const users = {
   Query: {
     user: async (__, { id }) => {
-      return await prisma.user.findUnique({ where: { id: Number(7) } })
+      return await prisma.user.findUnique({ where: { id: Number(id) } })
     }
   }
 }

@@ -10,11 +10,11 @@ shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:
 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2 cursor-pointer
 `;
 
-export default function Success() {
+export default function Success({ name }) {
     return (
         <Container>
             <Main>
-                <h1 className="text-center font-regular text-lg">مرحباً بعودتك : <span className="font-bolder">منصور</span> 👋</h1>
+                <h1 className="text-center font-regular text-lg">مرحباً بعودتك : <span className="font-bolder">{name}</span> 👋</h1>
                 <Button>
                     إدارة الموقع
                 </Button>

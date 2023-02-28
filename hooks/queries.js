@@ -2,8 +2,8 @@ import { gql } from "@apollo/client";
 // import { EVENT_FIELDS } from "./fragments"
 
 export const GET_USER = gql`
-  query User($userId: ID!) {
-    user(userId: $userId) {
+  query User($id: ID!) {
+    user(id: $id) {
       name
     }
   }
