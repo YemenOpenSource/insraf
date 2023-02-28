@@ -1,5 +1,6 @@
 import tw from "tailwind-styled-components";
-
+import Image from "next/image";
+import verified from "@/public/verified.svg";
 /* 
  styled-components
 */
@@ -14,6 +15,7 @@ export default function Success({ name }) {
     return (
         <Container>
             <Main>
+            <Image src={verified} className="w-[200px] select-none mx-auto mb-4" alt="insarf logo" priority />
                 <h1 className="text-center font-regular text-lg">مرحباً بعودتك : <span className="font-bolder">{name}</span> 👋</h1>
                 <Button>
                     إدارة الموقع
