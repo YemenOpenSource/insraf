@@ -31,7 +31,7 @@ export const auth = {
       const user = await prisma.user.findUnique({ where: { email } });
       if (!user) throw new GraphQLError("المستخدم غير موجود !");
       const isEqual = await bcrypt.compare(password, user.password);
-      if (!isEqual) throw new GraphQLError("كلمة السر غير متطابقة");
+      if (!isEqual) throw new GraphQLError("كلمة السر غير متطابقة مع البريد الإكتروني");
       const userForToken = {
         email: user.email,
         id: user.id,

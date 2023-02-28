@@ -1,8 +1,7 @@
 "use client";
 import tw from "tailwind-styled-components";
-import Image from "next/image";
 import Link from "next/link";
-import insarf_icon from "@/public/icon.svg";
+import { AddUser } from "react-iconly";
 import { useState } from "react";
 import { Register } from "@/components";
 
@@ -19,12 +18,18 @@ export default function Component() {
 
   return (
     <div className="max-w-7xl mx-auto p-2 sm:p-4">
-      <div className="max-w-3xl mx-auto p-3">
+      <div className="max-w-3xl mx-auto sm:p-3">
         <div className="bg-white overflow-hidden shadow divide-gray-200">
           <div className="px-4 py-5 sm:px-6">
-            <Image src={insarf_icon} className="w-[100px] select-none mx-auto" alt="insarf logo" priority />
+            <div className="bg-blue-700 w-[100px] h-[100px] rounded-full leading-[100px] text-center mx-auto flex justify-center items-center">
+              <AddUser
+                primaryColor='white'
+                stroke='regular'
+                size="xlarge"
+              />
+            </div>
           </div>
-          <Register name={setName} email={setEmail} password={setPassword}/>
+          <Register name={setName} email={setEmail} password={setPassword} />
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0">
             <Button
             >

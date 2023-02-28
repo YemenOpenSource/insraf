@@ -1,18 +1,17 @@
 "use client";
 import tw from "tailwind-styled-components";
-import Image from "next/image";
 import Link from "next/link";
-import insarf_icon from "@/public/icon.svg";
 import { useMutation } from "@apollo/client";
-import { useState } from "react";
-import { Login } from "@/components";
+import { useState, useEffect } from "react";
+import { Login, Alert } from "@/components";
 import { LOGIN } from "@/hooks/mutations";
 import { setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
+import { User } from "react-iconly";
 
 // tailwind-styled-components
 const Container = tw.div`max-w-7xl mx-auto p-2 sm:p-4`;
-const Card = tw.div`max-w-3xl mx-auto p-3`;
+const Card = tw.div`max-w-3xl mx-auto sm:p-3`;
 const Page = tw.div`bg-white overflow-hidden shadow divide-gray-200`;
 const Button = tw.button`
   w-full mb-5 flex justify-center py-2 px-4 border border-transparent 
@@ -23,6 +22,7 @@ const Button = tw.button`
 export default function SigIn() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
+  const [alert, setAlert] = useState()
   const router = useRouter();
 
   const [login] = useMutation(LOGIN, {
@@ -31,15 +31,33 @@ export default function SigIn() {
       setCookie("userId", data.login.userId)
       router.push("/auth/success")
     },
-    onError: (error) => console.log(error),
+    onError: (error) => setAlert(error.message),
   });
+ 
+  useEffect(() => {
+    if(alert) setAlert(false)
+  }, [email, password])
 
   return (
     <Container>
       <Card>
         <Page>
           <div className="px-4 py-5 sm:px-6">
-            <Image src={insarf_icon} className="w-[100px] select-none mx-auto" alt="insarf logo" priority />
+            {alert && (
+              <Alert
+                title="خطأ"
+                textColor="text-red-50"
+                bgColor="bg-red-500"
+                body={alert}
+              />
+            )}
+            <div className="bg-blue-700 w-[100px] h-[100px] rounded-full leading-[100px] text-center mx-auto flex justify-center items-center">
+              <User
+                primaryColor='white'
+                stroke='regular'
+                size="xlarge"
+              />
+            </div>
           </div>
           <Login email={setEmail} password={setPassword} />
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0">
