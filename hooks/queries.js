@@ -1,7 +1,15 @@
 import { gql } from "@apollo/client";
-import { EVENT_FIELDS } from "./fragments"
+// import { EVENT_FIELDS } from "./fragments"
 
-export const EVENTS = gql`
+export const GET_USER = gql`
+  query User($userId: ID!) {
+    user(userId: $userId) {
+      name
+    }
+  }
+`;
+
+/* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {
     events(limit: $limit, offset: $offset) {
@@ -54,3 +62,4 @@ export const BOOKINGS = gql`
     }
   }
 `;
+ */

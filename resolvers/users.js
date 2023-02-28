@@ -1,4 +1,14 @@
-import prisma from "lib/prisma";
+import prisma from "lib/prisma"
+
+export const users = {
+  Query: {
+    user: async (__, { id }) => {
+      return await prisma.user.findUnique({ where: { id: Number(7) } })
+    }
+  }
+}
+
+/* import prisma from "lib/prisma";
 import { isLoggedin } from "@/middleware/isLoggedin";
 import { combineResolvers } from "graphql-resolvers";
 
@@ -9,3 +19,4 @@ export const users = {
     })
   }
 };
+ */
