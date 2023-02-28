@@ -11,7 +11,7 @@ import { setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 
 // tailwind-styled-components
-const Container = tw.div`max-w-7xl mx-auto sm:px-6 lg:px-8 sm:my-[52px]`;
+const Container = tw.div`max-w-7xl mx-auto p-2 sm:p-4`;
 const Card = tw.div`max-w-3xl mx-auto p-3`;
 const Page = tw.div`bg-white overflow-hidden shadow divide-gray-200`;
 const Button = tw.button`

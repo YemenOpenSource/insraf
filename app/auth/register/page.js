@@ -18,7 +18,7 @@ export default function Component() {
   const [password, setPassword] = useState()
 
   return (
-    <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 sm:my-[52px]">
+    <div className="max-w-7xl mx-auto p-2 sm:p-4">
       <div className="max-w-3xl mx-auto p-3">
         <div className="bg-white overflow-hidden shadow divide-gray-200">
           <div className="px-4 py-5 sm:px-6">
