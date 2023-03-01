@@ -14,7 +14,7 @@ export default function HeadStudent() {
                     />
                     تعديل
                 </button>
-                <button className="bg-red-600 outline-none hover:bg-red-500 selection:bg-red-50 selection:text-red-900 text-sm p-3 rounded-sm text-white sm:ml-0 font-bolder flex justify-center items-center">
+                <button className="bg-red-500 outline-none hover:bg-red-600 selection:bg-red-50 selection:text-red-900 text-sm p-3 rounded-sm text-white sm:ml-0 font-bolder flex justify-center items-center">
                     <Delete
                         style={{ marginLeft: 6 }}
                         primaryColor='white'
