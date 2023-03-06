@@ -19,6 +19,7 @@ export default function Breadcrumb({ breadcrumbs }) {
                                         className={clsx("ml-1 text-md sm:text-xl hover:text-blue-600 md:ml-2 cursor-pointer select-none",
                                             active[active.length - 1] == breadcrumb.active ? "text-blue-700 font-bolder" : "font-bolder text-gray-700"
                                         )}
+                                        passHref
                                     >
                                         {breadcrumb.name}
                                     </Link>

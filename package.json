@@ -12,6 +12,7 @@
     "@apollo/client": "^3.7.8",
     "@apollo/server": "^4.4.0",
     "@as-integrations/next": "^1.2.0",
+    "@headlessui/react": "^1.7.13",
     "@next/font": "13.1.6",
     "@prisma/client": "^4.10.1",
     "bcryptjs": "^2.4.3",

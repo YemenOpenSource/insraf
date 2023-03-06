@@ -23,7 +23,7 @@ export default function CreateStudent(props) {
             <div className="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                 <div>
                     <div>
-                        <h3 className="text-lg leading-6 font-medium text-gray-900">معلومات الشخصية</h3>
+                        <h3 className="text-lg leading-6 font-bolder text-gray-900">معلومات الشخصية</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">
                             إدخل المعلومات الشخصية لطالب
                         </p>
@@ -32,33 +32,33 @@ export default function CreateStudent(props) {
                     <div className="mt-6 sm:mt-5 space-y-6 sm:space-y-5">
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="username" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 الاسم
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <div className="max-w-lg flex rounded-md shadow-sm font-medium">
-                                    <input onChange={({ target }) => setData({ ...data, name: target.value })} type="text" name="name" id="name" className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الطالب" required="" />
+                                <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
+                                    <input onChange={({ target }) => setData({ ...data, name: target.value })} type="text" name="name" id="name" className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الطالب" required="" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="username" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 تاريخ الميلاد
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <div className="max-w-lg flex rounded-md shadow-sm font-medium">
-                                    <input onChange={({ target }) => setData({ ...data, date: target.value })} type="date" name="date" id="date" className="bg-gray-50 font-medium text-right border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
+                                <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
+                                    <input onChange={({ target }) => setData({ ...data, date: target.value })} type="date" name="date" id="date" className="bg-gray-50 font-bolder text-right border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="about" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 الجنس
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <select defaultValue="MALE" onChange={({ target }) => setData({ ...data, gender: target.value })} id="gender" className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right">
+                                <select defaultValue="MALE" onChange={({ target }) => setData({ ...data, gender: target.value })} id="gender" className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right">
                                     <option value="MALE">ذكر</option>
                                     <option value="FAMALE">انثى</option>
                                 </select>
@@ -66,7 +66,7 @@ export default function CreateStudent(props) {
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="cover-photo" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="cover-photo" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 الصورة الشخصية
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
@@ -89,7 +89,7 @@ export default function CreateStudent(props) {
                                         <div className="flex text-sm text-gray-600">
                                             <label
                                                 htmlFor="file-upload"
-                                                className="relative cursor-pointer bg-white rounded-md font-medium text-blue-700 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                                                className="relative cursor-pointer bg-white rounded-md font-bolder text-blue-700 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
                                             >
                                                 <span>إرفع الصورة</span>
                                                 <input id="file-upload" name="file-upload" type="file" className="sr-only" />
@@ -106,39 +106,39 @@ export default function CreateStudent(props) {
 
                 <div className="pt-8 space-y-6 sm:pt-10 sm:space-y-5">
                     <div>
-                        <h3 className="text-lg leading-6 font-medium text-gray-900">معلومات الإكاديمية</h3>
+                        <h3 className="text-lg leading-6 font-bolder text-gray-900">معلومات الإكاديمية</h3>
                         <p className="mt-1 max-w-2xl text-sm text-gray-500">إدخل المعلومات الإكاديمية لطالب</p>
                     </div>
                     <div className="space-y-6 sm:space-y-5">
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="register" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="register" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 رقم القيد
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <div className="max-w-lg flex rounded-md shadow-sm font-medium">
-                                    <input onChange={({ target }) => setData({ ...data, register: target.value })} type="text" name="register" id="register" className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل رقم القيد" required="" />
+                                <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
+                                    <input onChange={({ target }) => setData({ ...data, register: target.value })} type="text" name="register" id="register" className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل رقم القيد" required="" />
                                 </div>
                             </div>
                         </div>
 
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="username" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="username" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 الشعبة
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <div className="max-w-lg flex rounded-md shadow-sm font-medium">
-                                    <input onChange={({ target }) => setData({ ...data, classification: target.value })} type="text" name="classification" id="classification" className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
+                                <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
+                                    <input onChange={({ target }) => setData({ ...data, classification: target.value })} type="text" name="classification" id="classification" className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="إدخل اسم الشعبة" required="" />
                                 </div>
                             </div>
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="about" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="about" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 المستوى
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <select defaultValue="one" onChange={({ target }) => setData({ ...data, level: target.value })} className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right">
+                                <select defaultValue="one" onChange={({ target }) => setData({ ...data, level: target.value })} className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right">
                                     <option value="one">الاول</option>
                                     <option value="two">الثاني</option>
                                     <option value="three">الثالث</option>
@@ -149,11 +149,11 @@ export default function CreateStudent(props) {
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="EC" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="EC" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 القسم
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <select defaultValue="EC" onChange={({ target }) => setData({ ...data, department: target.value })} className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 text-right">
+                                <select defaultValue="EC" onChange={({ target }) => setData({ ...data, department: target.value })} className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right">
                                     <option value="EC">الإكترونيات وإتصالات</option>
                                     <option value="C">مدني</option>
                                     <option value="E">كهرباء</option>
@@ -165,14 +165,14 @@ export default function CreateStudent(props) {
                         </div>
 
                         <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start sm:border-t sm:border-gray-200 sm:pt-5">
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2">
+                            <label htmlFor="password" className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2">
                                 المعرف الشخصي
                             </label>
                             <div className="mt-1 sm:mt-0 sm:col-span-2">
-                                <div className="max-w-lg flex rounded-md shadow-sm font-medium">
-                                    <input onChange={({ target }) => setData({ ...data, password: target.value })} type="password" name="password" id="password" className="bg-white font-medium border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="رقم البطاقة الشخصية - الجواز السفر - شهادة الميلاد" required="" />
+                                <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
+                                    <input onChange={({ target }) => setData({ ...data, password: target.value })} type="password" name="password" id="password" className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" placeholder="رقم البطاقة الشخصية - الجواز السفر - شهادة الميلاد" required="" />
                                 </div>
-                                <p className="font-medium text-red-500 mt-2 text-sm selection:bg-red-50 selection:text-red-700">
+                                <p className="font-bolder text-red-500 mt-2 text-sm selection:bg-red-50 selection:text-red-700">
                                     المعرف الشخصي هو كلمة المرور الخاصة بالطالب في التطبيق
                                 </p>
                             </div>

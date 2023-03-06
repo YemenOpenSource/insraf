@@ -4,6 +4,7 @@ specifiers:
   '@apollo/client': ^3.7.8
   '@apollo/server': ^4.4.0
   '@as-integrations/next': ^1.2.0
+  '@headlessui/react': ^1.7.13
   '@next/font': 13.1.6
   '@prisma/client': ^4.10.1
   '@types/react': 18.0.27
@@ -38,6 +39,7 @@ dependencies:
   '@apollo/client': 3.7.8_gdcq4dv6opitr3wbfwyjmanyra
   '@apollo/server': 4.4.0_graphql@16.6.0
   '@as-integrations/next': 1.2.0_eef7pgvalw4xjgungph44tijny
+  '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
   '@next/font': 13.1.6
   '@prisma/client': 4.10.1_prisma@4.10.1
   bcryptjs: 2.4.3
@@ -361,6 +363,18 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       graphql: 16.6.0
+    dev: false
+
+  /@headlessui/react/1.7.13_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-9n+EQKRtD9266xIHXdY5MfiXPDfYwl7zBM7KOx2Ae3Gdgxy8QML1FkCMjq6AsOf0l6N9uvI4HcFtuFlenaldKg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16 || ^17 || ^18
+      react-dom: ^16 || ^17 || ^18
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:

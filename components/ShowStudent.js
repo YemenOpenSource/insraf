@@ -22,29 +22,29 @@ export default function ShowStudent(props) {
                         <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
                             <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                                 <div className="sm:col-span-1">
-                                    <dt className="text-sm font-medium text-gray-500">الاسم :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">الاسم :</dt>
                                     <dd className="mt-1 text-sm text-gray-500 font-medium">{name}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
-                                    <dt className="text-sm font-medium text-gray-500">رقم القيد :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">رقم القيد :</dt>
                                     <dd className="mt-1 text-sm text-red-500 font-medium">{regNo}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
-                                    <dt className="text-sm font-medium text-gray-500">الشعبة :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">الشعبة :</dt>
                                     <dd className="mt-1 text-sm text-blue-700 font-medium">{classification}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
-                                    <dt className="text-sm font-medium text-gray-500">المستوى الدراسي :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">المستوى الدراسي :</dt>
                                     <dd className="mt-1 text-sm text-gray-500 font-medium">{level}</dd>
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <dt className="text-sm font-medium text-gray-500">القسم العلمي :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">القسم العلمي :</dt>
                                     <dd className="mt-1 text-sm text-gray-500 font-medium">
                                         {department}
                                     </dd>
                                 </div>
                                 <div className="sm:col-span-2">
-                                    <dt className="text-sm font-medium text-gray-500">تصدير</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">تصدير</dt>
                                     <dd className="mt-1 text-sm text-gray-900">
                                         <ul role="list" className="border border-gray-200 rounded-md divide-y divide-gray-200">
                                             <li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
@@ -53,7 +53,7 @@ export default function ShowStudent(props) {
                                                     <span className="ml-2 flex-1 w-0 truncate">card_{regNo}.pdf</span>
                                                 </div>
                                                 <div className="ml-4 flex-shrink-0">
-                                                    <p className="font-medium text-blue-700 hover:text-blue-500">
+                                                    <p className="font-bolder text-blue-700 hover:text-blue-500">
                                                         طباعة
                                                     </p>
                                                 </div>
@@ -88,7 +88,7 @@ export default function ShowStudent(props) {
             <span className="text-blue-700 font-bolder">  </span>
         </p>
         <p className="uppercase w-full font-bolder h-10 bg-blue-700 text-blue-50 leading-2 p-2">
-            <span className="text-blue-50 font-medium font-sans">  </span>
+            <span className="text-blue-50 font-bolder font-sans">  </span>
         </p>
     </div>
 */
