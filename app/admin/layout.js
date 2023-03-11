@@ -17,6 +17,7 @@ export default function layout({ children }) {
         .replace('create', 'إضافة طالب')
         .replace('category', 'التصنيفات')
         .replace('edit', 'تعديل')
+        .replace('level', 'المستوى')
     };
 
     useEffect(() => {

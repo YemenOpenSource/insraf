@@ -10,7 +10,7 @@ export default function Breadcrumb({ breadcrumbs }) {
     return (
         <nav className="m-auto p-2 sm:p-4 flex flex-col items-start justify-center">
             <div className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm text-center w-full">
-                <ol className="flex flex-row">
+                <ol className="flex flex-row overflow-x-auto md:overflow-hidden">
                     {
                         breadcrumbs.map((breadcrumb, i) =>
                             <li key={i}>

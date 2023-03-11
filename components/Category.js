@@ -29,7 +29,7 @@ export default function Category({
             <h5 className="text-2xl font-bolder tracking-tight text-gray-900">{name}</h5>
             <p className="mb-3 font-normal text-gray-700">{description}</p>
             <Link
-                href={`/category/${id}`}
+                href={`/admin/category/${id}`}
             >
                 <button className="inline-flex items-center font-bolder bg-blue-700 selection:bg-blue-50 selection:text-blue-900 px-3 py-2 text-sm font-medium text-center text-white hover:bg-blue-800">
                     <Show

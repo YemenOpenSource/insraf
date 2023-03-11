@@ -10,6 +10,41 @@ export const GET_USER = gql`
   }
 `;
 
+export const DEPARTMENTS_QUERY = gql`
+  query Departments {
+    departments {
+      id
+      name
+      description
+    }
+  }
+`;
+
+export const DEPARTMENT_QUERY = gql`
+  query Department($id: Int!) { 
+    department(id: $id) { 
+      id 
+      name 
+      levels { 
+        id 
+        name 
+      } 
+    } 
+  }
+`;
+
+export const LEVEL_QUERY = gql`
+  query Level($id: Int!) { 
+    level(id: $id) { 
+      id 
+      name 
+      students { 
+        id 
+        name 
+      } 
+    }
+  }
+`;
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {

@@ -1,6 +1,14 @@
+"use client";
 import { Category } from "@/components";
+import { useQuery } from '@apollo/client';
+import { DEPARTMENTS_QUERY } from "@/hooks/queries";
 
 export default function page() {
+  const { loading, error, data } = useQuery(DEPARTMENTS_QUERY);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :(</p>;
+
   const tags = [
     {
       id: 1,
@@ -55,7 +63,7 @@ export default function page() {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 selection:bg-blue-700 selection:text-white">
           {
-            tags.map(({ id, name, description }) =>
+            data?.departments?.map(({ id, name, description }) =>
               <Category
                 key={id}
                 id={id}
