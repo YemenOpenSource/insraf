@@ -12,7 +12,7 @@ shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:
 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-2 cursor-pointer mx-2
 `;
 
-export default function Success({ name }) {
+export default function Success({ name, logout }) {
     return (
         <Container>
             <Main>
@@ -30,8 +30,8 @@ export default function Success({ name }) {
                         </Button>
                     </Link>
                     <Link href={"/admin"}>
-                        <Button>
-                            إتصل بنا
+                        <Button onClick={() => logout()}>
+                          تسجيل خروج
                         </Button>
                     </Link>
                 </div>

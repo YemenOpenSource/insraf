@@ -1,30 +1,29 @@
-import { NextRequest, NextResponse } from "next/server";
+// middleware.ts
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export const config = {
-    matcher: ["/events/bookings", "/login", "/register", "/events/create"]
+export function middleware(request: NextRequest) {
+    switch (request.cookies.has('token')) {
+        case true:
+            if (request.nextUrl.pathname.startsWith('/auth/login')) {
+                return NextResponse.rewrite(new URL('/admin', request.url))
+            }
+            if (request.nextUrl.pathname.startsWith('/auth/register')) {
+                return NextResponse.rewrite(new URL('/admin', request.url))
+            }
+        break;
+        case false:
+            if (request.nextUrl.pathname.startsWith('/auth/success')) {
+                return NextResponse.rewrite(new URL('/auth/login', request.url))
+            }
+            return NextResponse.rewrite(new URL('/auth/login', request.url))
+        break;
+        default:
+            console.log("default")
+        break;
+    }
 }
 
-export async function middleware(req: NextRequest) {
-    let path: string | URL;
-    const COOKIE_NAME = "token"
-    const getCookie = req.cookies.get(COOKIE_NAME)
-    if(req.nextUrl.pathname.startsWith("/login") && getCookie != undefined) {
-        path = "/"
-    } else if (req.nextUrl.pathname.startsWith("/register") && getCookie != undefined) {
-        path = "/"
-    } else if (req.nextUrl.pathname.startsWith("/events/bookings") && getCookie != undefined) {
-        path = "/events/bookings"
-    } else if (req.nextUrl.pathname.startsWith("/events/bookings") && getCookie == undefined) {
-        path = "/login"
-    } else if (req.nextUrl.pathname.startsWith("/events/create") && getCookie != undefined) {
-        path = "/events/create"
-    } else if (req.nextUrl.pathname.startsWith("/events/create") && getCookie == undefined) {
-        path = "/login"
-    } else {
-        path = req.url
-    }
-    const res = NextResponse.rewrite(new URL(path, req.url))
-    return res
-} 
-
-// document.cookie = `token = ; expires=Thu, 01 jan 1970 00:00:01 GMT
+export const config = {
+    matcher: ['/admin/:path*', '/auth/:path*']
+}

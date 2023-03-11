@@ -18,6 +18,9 @@ export default function layout({ children }) {
         .replace('category', 'التصنيفات')
         .replace('edit', 'تعديل')
         .replace('level', 'المستوى')
+        .replace('auth', '')
+        .replace('login', 'مرحباً بك')
+        .replace('register', 'مرحباً بك')
     };
 
     useEffect(() => {
