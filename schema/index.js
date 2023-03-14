@@ -57,7 +57,7 @@ export const typeDefs = gql`
     classifiction: String!
     password: String!
     gender: Gender!
-    levelId: ID!
+    levelId: Int!
   }
 
   type Query {

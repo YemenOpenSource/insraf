@@ -20,17 +20,28 @@ export const CREATE_USER = gql`
 `;
 
 export const CREATE_STUDENT = gql`
+  enum Gender {
+    MALE
+    FEMALE
+  }
   mutation createStudent(
     $name: String!, 
     $date: String!, 
     $register: Int!, 
     $classifiction: String!, 
-    $gender: Gender!, 
-    $levelId: ID!
+    $gender: Gender!
+    $levelId: Int!
   ) {
-    createStudent(userInput: {name: $name, email: $email, password: $password}) {
-      token
-      userId
+    createStudent(userInput: {
+      name: $name, 
+      date: $date, 
+      register: $register, 
+      classifiction: $classifiction, 
+      gender: $gender, 
+      gender: $gender, 
+      levelId: $levelId
+    }) {
+      name
     }
   }
 `;
