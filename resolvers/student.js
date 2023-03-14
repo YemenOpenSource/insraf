@@ -74,8 +74,7 @@ export const students = {
                         classifiction: studentInput.classifiction,
                         password: studentInput.password,
                         gender: studentInput.gender,
-                        level: studentInput.level,
-                        department: studentInput.department
+                        levelId: studentInput.levelId
                     },
                 });
                 return student;

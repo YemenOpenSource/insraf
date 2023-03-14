@@ -19,7 +19,23 @@ export const CREATE_USER = gql`
   }
 `;
 
-export const BOOK_EVENT = gql`
+export const CREATE_STUDENT = gql`
+  mutation createStudent(
+    $name: String!, 
+    $date: String!, 
+    $register: Int!, 
+    $classifiction: String!, 
+    $gender: Gender!, 
+    $levelId: ID!
+  ) {
+    createStudent(userInput: {name: $name, email: $email, password: $password}) {
+      token
+      userId
+    }
+  }
+`;
+
+/* export const BOOK_EVENT = gql`
   mutation BookEvent($eventId: ID!) {
     bookEvent(eventId: $eventId) {
       id
@@ -45,4 +61,4 @@ export const CANCEL_BOOKING = gql`
       title
     }
   }
-` 
+`  */

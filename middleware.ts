@@ -16,6 +16,9 @@ export function middleware(request: NextRequest) {
             if (request.nextUrl.pathname.startsWith('/auth/success')) {
                 return NextResponse.rewrite(new URL('/auth/login', request.url))
             }
+            if (request.nextUrl.pathname.startsWith('/auth/register')) {
+                return NextResponse.rewrite(new URL('/auth/register', request.url))
+            }
             return NextResponse.rewrite(new URL('/auth/login', request.url))
         break;
         default:

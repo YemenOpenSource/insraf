@@ -41,10 +41,22 @@ export const LEVEL_QUERY = gql`
       students { 
         id 
         name 
+        register
+        classifiction
       } 
     }
   }
 `;
+
+export const LEVEL = gql`
+  query Levels { 
+    levels { 
+      id 
+      name 
+    }
+  }
+`;
+
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {
