@@ -1,11 +1,10 @@
 import { gql } from "@apollo/client";
 
-export const EVENT_FIELDS = gql`
-  fragment EventFields on Event {
+export const STUDENT_FIELDS = gql`
+  fragment StudentFields on Student {
     id
-    title
-    description
-    price
-    date
+    name
+    register
+    classification
   }
-`
+`;

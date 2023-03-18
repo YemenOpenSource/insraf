@@ -3,7 +3,7 @@ import qr from "@/public/images/qr.png";
 import insarf_blue from "@/public/insarf_blue.svg";
 
 export default function ShowStudent(props) {
-    const { name, regNo, department, level, classification } = props
+    const { name, regNo, level, classification } = props
     return (
         <div className="flex w-full flex-col justify-center px-0 sm:px-4">
             <div className="bg-white rounded-lg shadow-lg">
@@ -23,25 +23,19 @@ export default function ShowStudent(props) {
                             <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">الاسم :</dt>
-                                    <dd className="mt-1 text-sm text-gray-500 font-medium">{name}</dd>
+                                    <dd className="mt-1 text-sm text-gray-500 font-bolder">{name}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">رقم القيد :</dt>
-                                    <dd className="mt-1 text-sm text-red-500 font-medium">{regNo}</dd>
+                                    <dd className="mt-1 text-sm text-red-500 font-bolder">{regNo}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">الشعبة :</dt>
-                                    <dd className="mt-1 text-sm text-blue-700 font-medium">{classification}</dd>
+                                    <dd className="mt-1 text-sm text-blue-700 font-bolder">{classification}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">المستوى الدراسي :</dt>
-                                    <dd className="mt-1 text-sm text-gray-500 font-medium">{level}</dd>
-                                </div>
-                                <div className="sm:col-span-2">
-                                    <dt className="text-sm font-bolder text-gray-500">القسم العلمي :</dt>
-                                    <dd className="mt-1 text-sm text-gray-500 font-medium">
-                                        {department}
-                                    </dd>
+                                    <dd className="mt-1 text-sm text-gray-500 font-bolder">{level}</dd>
                                 </div>
                                 <div className="sm:col-span-2">
                                     <dt className="text-sm font-bolder text-gray-500">تصدير</dt>

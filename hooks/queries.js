@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-// import { EVENT_FIELDS } from "./fragments"
+import { STUDENT_FIELDS } from "@/hooks/fragments";
 
 export const GET_USER = gql`
   query User($id: ID!) {
@@ -42,7 +42,7 @@ export const LEVEL_QUERY = gql`
         id 
         name 
         register
-        classifiction
+        classification
       } 
     }
   }
@@ -56,6 +56,29 @@ export const LEVEL = gql`
     }
   }
 `;
+
+export const STUDENT_QUERY = gql`
+  ${STUDENT_FIELDS}
+  query Students { 
+    students { 
+      ...StudentFields
+    }
+  }
+`;
+
+export const STUDENT_GET = gql`
+  ${STUDENT_FIELDS}
+  query Student($id: ID!) { 
+    student(id: $id) { 
+      ...StudentFields
+      level {
+        name
+      }
+    }
+  }
+`;
+
+
 
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}

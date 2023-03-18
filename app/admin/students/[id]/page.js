@@ -1,15 +1,12 @@
+"use client";
 import React from "react";
+import { useQuery } from '@apollo/client';
+import { STUDENT_GET } from "@/hooks/queries";
 import { Alert, ShowStudent, Attendance, HeadStudent } from "@/components";
 
-export default function page() {
-    const user = {
-        name: "منصور أحمد منصور حيدرة",
-        regNo: "18600",
-        department: "الإكترونات وأتصالات",
-        level: "الخامس",
-        classification: "B5EC"
-    }
-    const data = [
+export default function page({ params }) {
+   
+    const ibn = [
         {
             subject: "Computer Network",
             dayNubmer: 12,
@@ -26,16 +23,23 @@ export default function page() {
             status: "بعذر"
         }
     ]
+
+    const { loading, error, data } = useQuery(STUDENT_GET, {
+        variables: { id: parseInt(params.id) },
+    });
+
+    if (loading) return <p> Loading...</p>;
+    if (error) return <p>Error :</p>;
+  
     return (
         <React.Fragment>
             <div className="m-auto p-2 sm:p-4 flex flex-col items-center lg:w-2/4 w-screen justify-center">
                 <HeadStudent />
                 <ShowStudent
-                    name={user.name}
-                    regNo={user.regNo}
-                    department={user.department}
-                    level={user.level}
-                    classification={user.classification}
+                    name={data.student.name}
+                    regNo={data.student.register}
+                    level={data.student.level.name}
+                    classification={data.student.classification}
                 />
                 <div className="flex w-full flex-col justify-center px-0 sm:px-4 mt-4">
                     <Alert
@@ -49,7 +53,7 @@ export default function page() {
                         "
                     />
                     <Attendance 
-                        attendance={data}
+                        attendance={ibn}
                     />
                 </div>
             </div>

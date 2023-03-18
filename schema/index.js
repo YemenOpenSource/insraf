@@ -23,14 +23,14 @@ export const typeDefs = gql`
   }
 
   type Student {
-   id: ID!
-   name: String!
-   date: String!
-   register: Int!
-   classifiction: String!
-   password: String!
-   gender: Gender!
-   level: Level!
+    id: ID!
+    name: String!
+    date: String!
+    register: Int!
+    classification: String!
+    password: String!
+    gender: Gender!
+    level: Level!
   }
 
   type AuthData {
@@ -54,14 +54,13 @@ export const typeDefs = gql`
     name: String!
     date: String!
     register: Int!
-    classifiction: String!
+    classification: String!
     password: String!
     gender: Gender!
     levelId: Int!
   }
 
   type Query {
-    allStudents: [Student]
     student(id: ID!): Student
     user(id: ID!): User
     departments: [Department]

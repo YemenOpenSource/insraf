@@ -39,7 +39,7 @@ export default function page({ params }) {
               <tr key={student.id} className="border-b text-center">
                 <th scope="row" className="px-4 py-3 font-medium text-blue-700 whitespace-nowrap text-right font-bolder">{student.name}</th>
                 <td className="px-4 py-3">{student.register}</td>
-                <td className="px-4 py-3 underline text-blue-700 font-bold">{student.classifiction}</td>
+                <td className="px-4 py-3 underline text-blue-700 font-bold">{student.classification}</td>
                 <td className="px-4 py-3 flex justify-center">
                   <Link href={`/admin/students/${student.id}`}>
                     <button className="bg-blue-700 hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">

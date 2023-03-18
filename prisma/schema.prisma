@@ -30,15 +30,15 @@ model Level {
 }
 
 model Student {
-  id            Int         @id @default(autoincrement())
-  name          String
-  date          String
-  register      Int
-  classifiction String
-  password      String
-  gender        Gender
-  level         Level?      @relation(fields: [levelId], references: [id])
-  levelId       Int?
+  id             Int         @id @default(autoincrement())
+  name           String
+  date           String
+  register       Int
+  classification String
+  password       String
+  gender         Gender
+  level          Level?      @relation(fields: [levelId], references: [id])
+  levelId        Int?
 }
 
 enum Gender {
