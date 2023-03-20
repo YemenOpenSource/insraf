@@ -29,6 +29,10 @@ export default function SubHeader() {
         {
             title: "الطلاب",
             slug: "students",
+        },
+        {
+            title: "إضافة",
+            slug: "added",
         }
     ];
 

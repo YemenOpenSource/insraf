@@ -50,7 +50,7 @@ export default function Category({
             </button>
             <div className="flex justify-center relative">
                 {isOpen && (
-                    <div className="bg-gray-50 border divide-y divide-gray-100 rounded-lg shadow-sm w-44 absolute top-0 mt-2">
+                    <div className="bg-gray-50 border divide-y divide-gray-100 rounded-lg shadow-sm w-44 top-0 mt-2">
                         <ul className="py-2 text-sm font-bolder text-gray-700 text-right">
                             <li>
                                 <Link className="block px-4 py-2 hover:bg-gray-100"
