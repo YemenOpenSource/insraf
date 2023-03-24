@@ -60,6 +60,16 @@ export const typeDefs = gql`
     levelId: Int!
   }
 
+  input levelInput {
+    name: String!
+    departmentId: Int!
+  }
+
+  input departmentInput {
+    name: String!
+    description: String!
+  }
+
   type Query {
     student(id: ID!): Student
     user(id: ID!): User
@@ -75,5 +85,7 @@ export const typeDefs = gql`
     createUser(userInput: UserInput!): AuthData
     login(email: String!, password: String!): AuthData
     createStudent(studentInput: StudentInput!): Student
+    createLevel(levelInput: levelInput!): Level
+    createDepartment(departmentInput: departmentInput!): Department
   }
 `;

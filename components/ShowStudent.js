@@ -31,7 +31,7 @@ export default function ShowStudent(props) {
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">الشعبة :</dt>
-                                    <dd className="mt-1 text-sm text-blue-700 font-bolder">{classification}</dd>
+                                    <dd className="mt-1 text-sm text-blue-700 font-sans">{classification}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">المستوى الدراسي :</dt>

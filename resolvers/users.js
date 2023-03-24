@@ -1,12 +1,12 @@
-import prisma from "lib/prisma"
+import prisma from "lib/prisma";
 
 export const users = {
   Query: {
     user: async (__, { id }) => {
-      return await prisma.user.findUnique({ where: { id: Number(id) } })
-    }
-  }
-}
+      return await prisma.user.findUnique({ where: { id: Number(id) } });
+    },
+  },
+};
 
 /* import prisma from "lib/prisma";
 import { isLoggedin } from "@/middleware/isLoggedin";

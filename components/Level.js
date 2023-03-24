@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
-export default function Level() {
+export default function Level({ levelhandler, departments, children }) {
+  const [level, setLevel] = useState();
+  const [departmentId, setDepartmentId] = useState();
+
   return (
     <div className="mt-4 sm:mt-0">
       <div className="md:grid md:grid-cols-3 md:gap-6">
@@ -15,6 +19,7 @@ export default function Level() {
           </div>
         </div>
         <div className="mt-5 md:col-span-2 md:mt-0">
+          {children}
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-3 gap-6">
@@ -32,28 +37,33 @@ export default function Level() {
                     autoComplete="given-name"
                     placeholder="قم بإدخال المستوى"
                     className="mt-2 p-3 font-regular block w-full rounded-md border-0 py-1.5 text-blue-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:text-sm sm:leading-6 outline-blue-700"
+                    onChange={({ target }) => setLevel(target.value)}
                   />
                   <p className="mt-2 text-sm text-blue-700 font-regular">
-                    يجب إن يكون المستوى بهذا الشكل : <span className="font-sans font-bold">B1EC</span> 
+                    يجب إن يكون المستوى بهذا الشكل :{" "}
+                    <span className="font-sans font-bold">B1EC</span>
                   </p>
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium font-bolder leading-6 text-gray-900">
-                  الوصف
+                  القسم
                 </label>
-                <div className="mt-2 flex flex-col items-center justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                  <textarea
-                    id="about"
-                    name="about"
-                    rows={3}
+                <div className="mt-2 flex flex-col justify-center rounded-md">
+                  <select
+                    onChange={({ target }) => setDepartmentId(target.value)}
                     className="mt-1 p-3 block w-full font-regular rounded-md border-0 text-blue-700 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-700 sm:py-1.5 sm:text-sm sm:leading-6 outline-blue-700"
-                    placeholder="قم بإدخال وصف القسم"
-                    defaultValue={""}
-                  />
+                  >
+                    <option>أختر القسم العلمي</option>
+                    {departments.map((department) => (
+                      <option key={department.id} value={Number(department.id)}>
+                        {department.name}
+                      </option>
+                    ))}
+                  </select>
                   <p className="mt-2 text-sm text-gray-500 font-regular">
-                    يجب إن يكون الوصف اسم القسم بالإنجليزي
+                    القسم العلمي الذي ينتمي له هذا المستوى
                   </p>
                 </div>
               </div>
@@ -62,6 +72,16 @@ export default function Level() {
               <button
                 type="submit"
                 className="inline-flex font-bolder justify-center rounded-md bg-blue-700 py-2 px-3 text-sm text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+                onClick={() => {
+                  levelhandler({
+                    variables: {
+                      name: level,
+                      departmentId: Number(departmentId),
+                    },
+                  })
+                  setLevel()
+                  setDepartmentId()
+                }}
               >
                 حفظ
               </button>
