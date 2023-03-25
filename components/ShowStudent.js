@@ -30,12 +30,12 @@ export default function ShowStudent(props) {
                                     <dd className="mt-1 text-sm text-red-500 font-bolder">{regNo}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
-                                    <dt className="text-sm font-bolder text-gray-500">الشعبة :</dt>
+                                    <dt className="text-sm font-bolder text-gray-500">القسم :</dt>
                                     <dd className="mt-1 text-sm text-blue-700 font-sans">{classification}</dd>
                                 </div>
                                 <div className="sm:col-span-1">
                                     <dt className="text-sm font-bolder text-gray-500">المستوى الدراسي :</dt>
-                                    <dd className="mt-1 text-sm text-gray-500 font-bolder">{level}</dd>
+                                    <dd className="mt-1 text-sm text-gray-500 font-sans">{level}</dd>
                                 </div>
                                 <div className="sm:col-span-2">
                                     <dt className="text-sm font-bolder text-gray-500">تصدير</dt>

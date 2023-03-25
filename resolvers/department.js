@@ -17,5 +17,17 @@ export const department = {
         return desc;
       }
     ),
+    deleteDepartment: combineResolvers(isLoggedin, async (_, { id }) => {
+      try {
+        const department = await prisma.department.delete({
+          where: {
+            id: Number(id),
+          },
+        });
+        return "تم حذف القسم !";
+      } catch (error) {
+        throw error;
+      }
+    }),
   },
 };

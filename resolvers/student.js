@@ -90,5 +90,17 @@ export const students = {
         throw error;
       }
     }),
+    deleteStudent: combineResolvers(isLoggedin, async (_, { id }) => {
+      try {
+        const student = await prisma.student.delete({
+          where: {
+            id: Number(id),
+          },
+        });
+        return "تم حذف الطالب !";
+      } catch (error) {
+        throw error;
+      }
+    }),
   },
 };

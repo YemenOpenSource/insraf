@@ -30,9 +30,21 @@ export const CREATE_DEPARTMENT = gql`
 
 export const CREATE_LEVEL = gql`
   mutation CreateLevel($name: String!, $departmentId: Int!) {
-    createLevel(levelInput: { name: $name, departmentId: $departmentId}) {
+    createLevel(levelInput: { name: $name, departmentId: $departmentId }) {
       name
     }
+  }
+`;
+
+export const DELETE_STUDENT = gql`
+  mutation DeleteStudent($id: ID!) {
+    deleteStudent(id: $id)
+  }
+`;
+
+export const DELETE_DEPARTMENT = gql`
+  mutation DeleteDepartment($id: ID!) {
+    deleteDepartment(id: $id)
   }
 `;
 
@@ -57,6 +69,7 @@ export const CREATE_STUDENT = gql`
         levelId: $levelId
       }
     ) {
+      id
       name
     }
   }

@@ -97,7 +97,7 @@ export default function CreateStudent(props) {
                   className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-2/4 p-2.5 text-right"
                 >
                   <option value="MALE">ذكر</option>
-                  <option value="FAMALE">انثى</option>
+                  <option value="FEMALE">انثى</option>
                 </select>
               </div>
             </div>
@@ -143,7 +143,7 @@ export default function CreateStudent(props) {
                 htmlFor="username"
                 className="block text-sm font-bolder text-gray-700 sm:mt-px sm:pt-2"
               >
-                الشعبة
+                القسم
               </label>
               <div className="mt-1 sm:mt-0 sm:col-span-2">
                 <div className="max-w-lg flex rounded-md shadow-sm font-bolder">
@@ -155,7 +155,7 @@ export default function CreateStudent(props) {
                     name="classification"
                     id="classification"
                     className="bg-white font-bolder border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                    placeholder="إدخل اسم الشعبة"
+                    placeholder="إدخل اسم القسم"
                     required=""
                   />
                 </div>

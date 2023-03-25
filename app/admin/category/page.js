@@ -1,12 +1,22 @@
 "use client";
 import { Category, Loading } from "@/components";
-import { useQuery } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { DEPARTMENTS_QUERY } from "@/hooks/queries";
+import { DELETE_DEPARTMENT } from "@/hooks/mutations";
 import { Fragment } from "react";
+import { useRouter } from "next/navigation";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
 
 export default function page() {
+  const router = useRouter();
+
   const { loading, error, data } = useQuery(DEPARTMENTS_QUERY);
+
+  const [deleteDepartment] = useMutation(DELETE_DEPARTMENT, {
+    onCompleted: (data) => {
+      router.refresh();
+    },
+  });
 
   if (loading) return <Loading />;
   if (error) return <p>Error :(</p>;
@@ -64,7 +74,7 @@ export default function page() {
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 selection:bg-blue-700 selection:text-white">
           {data?.departments?.map(({ id, name, description }) => (
-            <Category key={id} id={id} name={name} description={description} />
+            <Category key={id} id={id} name={name} description={description} deleteDepartment={deleteDepartment}/>
           ))}
         </div>
       </div>

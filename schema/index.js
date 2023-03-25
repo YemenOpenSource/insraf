@@ -87,5 +87,7 @@ export const typeDefs = gql`
     createStudent(studentInput: StudentInput!): Student
     createLevel(levelInput: levelInput!): Level
     createDepartment(departmentInput: departmentInput!): Department
+    deleteStudent(id: ID!): String
+    deleteDepartment(id: ID!): String
   }
 `;

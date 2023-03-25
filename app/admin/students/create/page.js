@@ -4,18 +4,24 @@ import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_STUDENT } from "@/hooks/mutations";
 import { Alert, CreateStudent, Loading } from "@/components";
 import { LEVEL } from "@/hooks/queries";
+import { useRouter } from "next/navigation";
 
 export default function page() {
   const [data, setData] = useState();
+  
+  const router = useRouter()
+
   const [alert, setAlert] = useState({
     onCompleted: false,
     onError: false,
     message: "",
   });
   const { loading, error, data: level } = useQuery(LEVEL);
+
   const [createStudent] = useMutation(CREATE_STUDENT, {
     onCompleted: (data) => {
-      setAlert({ ...alert, message: data.name, onCompleted: true });
+      setAlert({ ...alert, message: data.createStudent.name, onCompleted: true });
+      router.push(`/admin/students/${data.createStudent.id}`)
     },
     onError: (error) =>
       setAlert({ ...alert, message: error.message, onError: true }),
