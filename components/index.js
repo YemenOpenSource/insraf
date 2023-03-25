@@ -18,6 +18,7 @@ import Login from "@/components/Login";
 import Register from "@/components/Register";
 import Department from "@/components/Department";
 import Level from "@/components/Level";
+import Loading from "@/components/Loading";
 
 export {
     SubHeader,
@@ -39,5 +40,6 @@ export {
     Login,
     Register,
     Department,
-    Level
+    Level,
+    Loading
 }

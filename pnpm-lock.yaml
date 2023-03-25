@@ -5,6 +5,7 @@ specifiers:
   '@apollo/server': ^4.4.0
   '@as-integrations/next': ^1.2.0
   '@headlessui/react': ^1.7.13
+  '@heroicons/react': ^2.0.16
   '@next/font': 13.1.6
   '@prisma/client': ^4.10.1
   '@types/react': 18.0.27
@@ -40,6 +41,7 @@ dependencies:
   '@apollo/server': 4.4.0_graphql@16.6.0
   '@as-integrations/next': 1.2.0_eef7pgvalw4xjgungph44tijny
   '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
+  '@heroicons/react': 2.0.16_react@18.2.0
   '@next/font': 13.1.6
   '@prisma/client': 4.10.1_prisma@4.10.1
   bcryptjs: 2.4.3
@@ -375,6 +377,14 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@heroicons/react/2.0.16_react@18.2.0:
+    resolution: {integrity: sha512-x89rFxH3SRdYaA+JCXwfe+RkE1SFTo9GcOkZettHer71Y3T7V+ogKmfw5CjTazgS3d0ClJ7p1NA+SP7VQLQcLw==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:

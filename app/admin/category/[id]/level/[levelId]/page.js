@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useQuery } from '@apollo/client';
 import { LEVEL_QUERY } from "@/hooks/queries";
-import { Alert, Students, SearchStudents, Container } from "@/components";
+import { Alert, Students, SearchStudents, Container, Loading } from "@/components";
 import { useState } from "react";
 import { Show } from "react-iconly";
 
@@ -16,7 +16,7 @@ export default function page({ params }) {
     return console.log(search)
   }
 
-  if (loading) return <p> Loading...</p>;
+  if (loading) return <Loading />
   if (error) return <p>Error :</p>;
 
   return (

@@ -4,7 +4,8 @@ import { useMutation, useQuery } from "@apollo/client";
 import { useRouter } from "next/navigation";
 import { CREATE_DEPARTMENT, CREATE_LEVEL } from "@/hooks/mutations";
 import { DEPARTMENTS_QUERY } from "@/hooks/queries";
-import { Alert, Container, Department, Level } from "@/components";
+import { Alert, Container, Department, Level, Loading } from "@/components";
+import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 
 export default function page() {
   const [alert, setAlert] = useState({
@@ -15,8 +16,8 @@ export default function page() {
     level: false,
   });
 
-  const router = useRouter()
-  
+  const router = useRouter();
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAlert({
@@ -40,7 +41,7 @@ export default function page() {
         department: true,
         level: false,
       });
-      router.refresh()
+      router.refresh();
     },
     onError: (error) => {
       setAlert({
@@ -77,11 +78,29 @@ export default function page() {
     },
   });
 
-  if (loading) return <p> Loading...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>Error :</p>;
 
   return (
     <Container sm={1} md={1} lg={1} gap={0}>
+      <div className="rounded-md bg-[#fec63d] mb-4 p-4">
+        <div className="flex">
+          <div className="flex-shrink-0">
+            <ExclamationTriangleIcon
+              className="h-5 w-5 text-[#614c19]"
+              aria-hidden="true"
+            />
+          </div>
+          <div className="mr-3">
+            <h3 className="text-sm font-medium text-[#614c19] font-bolder">تحذير !</h3>
+            <div className="mt-2 text-sm text-[#614c19] font-regular">
+              <p>
+                يرجى إتباع التعليمات عند إضافة القسم مع المستوى باشكل الصحيح
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       {/* department section */}
       <Department department={department}>
         {alert.department && alert.success ? (

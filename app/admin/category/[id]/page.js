@@ -3,13 +3,14 @@ import Link from "next/link";
 import { useQuery } from '@apollo/client';
 import { DEPARTMENT_QUERY } from "@/hooks/queries";
 import { Show } from "react-iconly";
+import { Loading } from "@/components";
 
 export default function page({ params }) {
     const { loading, error, data } = useQuery(DEPARTMENT_QUERY, {
         variables: { id: parseInt(params?.id) },
     });
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Loading />
     if (error) return <p>Error</p>;
 
     return (

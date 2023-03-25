@@ -2,7 +2,7 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
 import { STUDENT_GET } from "@/hooks/queries";
-import { Alert, ShowStudent, Attendance, HeadStudent } from "@/components";
+import { Alert, ShowStudent, Attendance, HeadStudent, Loading } from "@/components";
 
 export default function page({ params }) {
    
@@ -28,7 +28,7 @@ export default function page({ params }) {
         variables: { id: parseInt(params.id) },
     });
 
-    if (loading) return <p> Loading...</p>;
+    if (loading) return <Loading />
     if (error) return <p>Error :</p>;
   
     return (

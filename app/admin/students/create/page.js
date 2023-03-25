@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_STUDENT } from "@/hooks/mutations";
-import { Alert, CreateStudent } from "@/components";
+import { Alert, CreateStudent, Loading } from "@/components";
 import { LEVEL } from "@/hooks/queries";
 
 export default function page() {
@@ -25,7 +25,7 @@ export default function page() {
     if (alert) setAlert({ ...alert, onError: false, onCompleted: false });
   }, [data]);
 
-  if (loading) return <p> Loading...</p>;
+  if (loading) return <Loading />
   if (error) return <p>Error :</p>;
 
   const handlerStudent = () => {
