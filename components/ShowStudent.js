@@ -1,5 +1,4 @@
 import Image from "next/image";
-import qr from "@/public/images/qr.png";
 import insarf_blue from "@/public/insarf_blue.svg";
 
 export default function ShowStudent(props) {
@@ -15,7 +14,7 @@ export default function ShowStudent(props) {
                                     <Image src={insarf_blue} className="w-[160px] select-none" alt="insarf logo" priority />
                                 </div>
                                 <div className="md:ml-0">
-                                    <Image src={qr} className="w-[80px] h-[80px] select-none" alt="qr" priority />
+                                    <Image src={require(`@/public/qr/${regNo}.png`)} className="w-[80px] h-[80px] select-none" alt="qr" priority />
                                 </div>
                             </div>
                         </div>

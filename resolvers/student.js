@@ -1,7 +1,9 @@
 import prisma from "lib/prisma";
+import QRcode from "qrcode";
+import fs from "fs";
+import jwt from "jsonwebtoken";
 import { isLoggedin } from "@/middleware/isLoggedin";
 import { combineResolvers } from "graphql-resolvers";
-// import { GraphQLError } from "graphql";
 
 export const students = {
   Gender: {
@@ -85,6 +87,15 @@ export const students = {
             },
           },
         });
+
+        // Generate the qr by using the register
+        const data = jwt.sign(`${register},${password}`, process.env.JWT)
+        const qrDataURL = QRcode.toDataURL(data, function (err, url) {
+          const qrImageBuffer = Buffer.from(url.split(",")[1], "base64");
+          const qrImagePath = `public/qr/${register}.png`;
+          fs.writeFileSync(qrImagePath, qrImageBuffer);
+        });
+        
         return student;
       } catch (error) {
         throw error;
