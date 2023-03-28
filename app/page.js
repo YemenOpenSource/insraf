@@ -1,22 +1,44 @@
-import React from 'react'
-import Link from "next/link";
+"use client";
+import { useState, useId } from "react";
+import Select from "react-select";
 
-export default function page() {
+export default function SearchBox() {
+  const [inputValue, setInputValue] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
+  const options = [
+    { value: "apple", label: "Apple" },
+    { value: "banana", label: "Banana" },
+    { value: "orange", label: "Orange" },
+    { value: "strawberry", label: "Strawberry" },
+  ];
+
+  const handleInputChange = (inputValue) => {
+    setInputValue(inputValue);
+    setSearchResults(
+      options.filter((option) =>
+        option.label.toLowerCase().includes(inputValue.toLowerCase())
+      )
+    );
+  };
+
+  const handleSelectChange = (selectedOption) => {
+    // console.log(selectedOption);
+    // handle selecting the option
+  };
+
   return (
     <div>
       <div>
-        <Link className="cursor-pointer text-teal-900 font-medium mx-2" href={"/admin"}>
-          admin
-        </Link>
-        <Link className="cursor-pointer text-teal-900 font-medium mx-2" href={"/user"}>
-          user
-        </Link>
-        <Link className="cursor-pointer text-teal-900 font-medium mx-2" href={"/auth/login"}>
-          login
-        </Link>
+        <Select
+          instanceId={useId()}
+          inputValue={inputValue}
+          onInputChange={handleInputChange}
+          onChange={handleSelectChange}
+          options={searchResults}
+          placeholder="Search"
+        />
       </div>
-      <h1 className="bg-red-700 font-bolder text-center text-white">موقع تحت الإنتاج</h1>
-      <p className="bg-gray-700 font-bolder text-center text-white">MAO Team</p>
     </div>
-  )
+  );
 }

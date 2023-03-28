@@ -8,6 +8,8 @@ specifiers:
   '@heroicons/react': ^2.0.16
   '@next/font': 13.1.6
   '@prisma/client': ^4.10.1
+  '@progress/kendo-drawing': ^1.17.4
+  '@progress/kendo-react-pdf': ^5.12.0
   '@types/react': 18.0.27
   autoprefixer: ^10.4.13
   bcryptjs: ^2.4.3
@@ -46,6 +48,8 @@ dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
   '@next/font': 13.1.6
   '@prisma/client': 4.10.1_prisma@4.10.1
+  '@progress/kendo-drawing': 1.17.4
+  '@progress/kendo-react-pdf': 5.12.0_hzagoq7pvfj5ou6co5roglwcee
   bcryptjs: 2.4.3
   chart.js: 4.2.0
   clsx: 1.2.1
@@ -605,6 +609,34 @@ packages:
   /@prisma/engines/4.10.1:
     resolution: {integrity: sha512-B3tcTxjx196nuAu1GOTKO9cGPUgTFHYRdkPkTS4m5ptb2cejyBlH9X7GOfSt3xlI7p4zAJDshJP4JJivCg9ouA==}
     requiresBuild: true
+
+  /@progress/kendo-drawing/1.17.4:
+    resolution: {integrity: sha512-Fg4Awq0bYq7Nf++2/GwpC8hoP5I5PWeVj6vxSYiJSsyKyh5K5cntCy3vyFS6WJ26pkySUlmDFsn9lbFZ4QlZIQ==}
+    dependencies:
+      '@progress/pako-esm': 1.0.1
+    dev: false
+
+  /@progress/kendo-file-saver/1.1.1:
+    resolution: {integrity: sha512-mo0Cw3MLoLcx2bA+Ma/VAxkM9vHSJ4Sg0vgh6U1ZIvPXmnfO8Dgsdiv/475lafyju0kG8KOhl3bcVagCF71glQ==}
+    dev: false
+
+  /@progress/kendo-react-pdf/5.12.0_hzagoq7pvfj5ou6co5roglwcee:
+    resolution: {integrity: sha512-k4BApwmwAg1jokCMHrvy7gU412TsODALzbbFt5OELebQ9EIfKqZnFC3b+vXVjArMzlbh2M4giIuDGSzj2uTE/A==}
+    peerDependencies:
+      '@progress/kendo-drawing': ^1.17.2
+      '@progress/kendo-licensing': ^1.3.0
+      react: ^16.8.2 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.2 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@progress/kendo-drawing': 1.17.4
+      '@progress/kendo-file-saver': 1.1.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@progress/pako-esm/1.0.1:
+    resolution: {integrity: sha512-O4A3b1EuE9Xe1pC3Xz9Tcn1M/CYrL71f4y/5TXeytOVTkmkzBgYW97fYP2f+54H0e0erWRaqV/kUUB/a8Uxfbw==}
+    dev: false
 
   /@protobufjs/aspromise/1.1.2:
     resolution: {integrity: sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==}
