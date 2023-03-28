@@ -8,11 +8,11 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 
 const server = new ApolloServer({
   resolvers,
-  typeDefs
+  typeDefs,
 });
 
 export default startServerAndCreateNextHandler(server, {
-   context: async function (req = NextRequest) {
+  context: async function (req = NextRequest) {
     const auth = req ? req.headers.authorization : null;
     if (auth) {
       const decoded = jwt.verify(auth, process.env.JWT);
