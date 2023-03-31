@@ -21,46 +21,46 @@ export const DEPARTMENTS_QUERY = gql`
 `;
 
 export const DEPARTMENT_QUERY = gql`
-  query Department($id: Int!) { 
-    department(id: $id) { 
-      id 
-      name 
-      levels { 
-        id 
-        name 
-      } 
-    } 
+  query Department($id: Int!) {
+    department(id: $id) {
+      id
+      name
+      levels {
+        id
+        name
+      }
+    }
   }
 `;
 
 export const LEVEL_QUERY = gql`
-  query Level($id: Int!) { 
-    level(id: $id) { 
-      id 
-      name 
-      students { 
-        id 
-        name 
+  query Level($id: Int!) {
+    level(id: $id) {
+      id
+      name
+      students {
+        id
+        name
         register
         classification
-      } 
+      }
     }
   }
 `;
 
 export const LEVEL = gql`
-  query Levels { 
-    levels { 
-      id 
-      name 
+  query Levels {
+    levels {
+      id
+      name
     }
   }
 `;
 
 export const STUDENT_QUERY = gql`
   ${STUDENT_FIELDS}
-  query Students { 
-    students { 
+  query Students {
+    students {
       ...StudentFields
     }
   }
@@ -68,8 +68,8 @@ export const STUDENT_QUERY = gql`
 
 export const STUDENT_GET = gql`
   ${STUDENT_FIELDS}
-  query Student($id: ID!) { 
-    student(id: $id) { 
+  query Student($id: ID!) {
+    student(id: $id) {
       ...StudentFields
       level {
         name
@@ -78,7 +78,14 @@ export const STUDENT_GET = gql`
   }
 `;
 
-
+export const SEARCH_QUERY = gql`
+  ${STUDENT_FIELDS}
+  query Search($contains: String) {
+    search(contains: $contains) {
+      ...StudentFields
+    }
+  }
+`;
 
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}

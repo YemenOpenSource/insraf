@@ -10,7 +10,6 @@ import Attendance from "@/components/Attendance";
 import HeadStudent from "@/components/HeadStudent";
 import CreateStudent from "@/components/CreateStudent";
 import Avater from "@/components/Avater";
-import QR from "@/components/QR";
 import Category from "@/components/Category";
 import Breadcrumb from "@/components/Breadcrumb";
 import Success from "@/components/Success";
@@ -33,7 +32,6 @@ export {
     HeadStudent,
     CreateStudent,
     Avater,
-    QR,
     Category,
     Breadcrumb,
     Success,

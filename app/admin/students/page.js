@@ -13,13 +13,16 @@ import { useQuery } from "@apollo/client";
 import { STUDENT_QUERY } from "@/hooks/queries";
 import { Fragment } from "react";
 import { InformationCircleIcon } from "@heroicons/react/20/solid";
+import { useRouter } from "next/navigation";
 
 export default function page() {
   const [search, setSearch] = useState();
   const { loading, error, data } = useQuery(STUDENT_QUERY);
 
+  const router = useRouter()
+
   const searchHander = () => {
-    return console.log(search);
+    router.push(`/admin/students/search?contains=${search}`)
   };
 
   if (loading) return <Loading />;

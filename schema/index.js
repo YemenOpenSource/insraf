@@ -79,6 +79,7 @@ export const typeDefs = gql`
     level(id: Int!): Level
     students: [Student]
     studentsByLevel(levelId: Int!): [Student]
+    search(contains: String): [Student]
   }
 
   type Mutation {

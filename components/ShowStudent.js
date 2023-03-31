@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import { PDFExport } from "@progress/kendo-react-pdf";
+import { PDFExport, Text } from "@progress/kendo-react-pdf";
 import Image from "next/image";
 import insarf_blue from "@/public/insarf_blue.svg";
 

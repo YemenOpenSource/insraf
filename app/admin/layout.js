@@ -22,6 +22,7 @@ export default function layout({ children }) {
         .replace('login', 'مرحباً بك')
         .replace('register', 'مرحباً بك')
         .replace('added', 'إضافة')
+        .replace('search', 'البحث')
     };
 
     useEffect(() => {

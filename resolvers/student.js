@@ -66,6 +66,21 @@ export const students = {
         },
       });
     }),
+    search: combineResolvers(isLoggedin, async (_, { contains }) => {
+      const words = contains? contains : ""
+      try {
+        let student = await prisma.student.findMany({
+          where: {
+            name: {
+              contains: words,
+            }
+          }
+        })
+        return student
+      } catch (error) {
+        throw error;
+      }
+    }),
   },
   Mutation: {
     createStudent: combineResolvers(isLoggedin, async (_, { studentInput }) => {
