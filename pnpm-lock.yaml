@@ -9,6 +9,7 @@ specifiers:
   '@next/font': 13.1.6
   '@prisma/client': ^4.10.1
   '@progress/kendo-drawing': ^1.17.4
+  '@progress/kendo-licensing': ^1.3.0
   '@progress/kendo-react-pdf': ^5.12.0
   '@types/react': 18.0.27
   autoprefixer: ^10.4.13
@@ -49,7 +50,8 @@ dependencies:
   '@next/font': 13.1.6
   '@prisma/client': 4.10.1_prisma@4.10.1
   '@progress/kendo-drawing': 1.17.4
-  '@progress/kendo-react-pdf': 5.12.0_hzagoq7pvfj5ou6co5roglwcee
+  '@progress/kendo-licensing': 1.3.0
+  '@progress/kendo-react-pdf': 5.12.0_y6i4whmxh6zqcwelqsfkex73ia
   bcryptjs: 2.4.3
   chart.js: 4.2.0
   clsx: 1.2.1
@@ -620,7 +622,15 @@ packages:
     resolution: {integrity: sha512-mo0Cw3MLoLcx2bA+Ma/VAxkM9vHSJ4Sg0vgh6U1ZIvPXmnfO8Dgsdiv/475lafyju0kG8KOhl3bcVagCF71glQ==}
     dev: false
 
-  /@progress/kendo-react-pdf/5.12.0_hzagoq7pvfj5ou6co5roglwcee:
+  /@progress/kendo-licensing/1.3.0:
+    resolution: {integrity: sha512-Bp5MUX6wVHVUW8ZJUNcFVw9/KwRvP/a9zg2gAwRhpHVlwrSPbIpCMoBRRk32CEzC1tpUsIuQywT95+97HXZDTg==}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      jsonwebtoken: 9.0.0
+    dev: false
+
+  /@progress/kendo-react-pdf/5.12.0_y6i4whmxh6zqcwelqsfkex73ia:
     resolution: {integrity: sha512-k4BApwmwAg1jokCMHrvy7gU412TsODALzbbFt5OELebQ9EIfKqZnFC3b+vXVjArMzlbh2M4giIuDGSzj2uTE/A==}
     peerDependencies:
       '@progress/kendo-drawing': ^1.17.2
@@ -630,6 +640,7 @@ packages:
     dependencies:
       '@progress/kendo-drawing': 1.17.4
       '@progress/kendo-file-saver': 1.1.1
+      '@progress/kendo-licensing': 1.3.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false

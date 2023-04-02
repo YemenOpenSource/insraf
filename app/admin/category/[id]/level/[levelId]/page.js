@@ -2,19 +2,13 @@
 import Link from "next/link";
 import { useQuery } from '@apollo/client';
 import { LEVEL_QUERY } from "@/hooks/queries";
-import { Alert, Students, SearchStudents, Container, Loading } from "@/components";
-import { useState } from "react";
+import { Alert, Students, Container, Loading } from "@/components";
 import { Show } from "react-iconly";
 
 export default function page({ params }) {
-  const [search, setSearch] = useState()
   const { loading, error, data } = useQuery(LEVEL_QUERY, {
     variables: { id: parseInt(params.levelId) },
   });
-
-  const searchHander = () => {
-    return console.log(search)
-  }
 
   if (loading) return <Loading />
   if (error) return <p>Error :</p>;
@@ -32,7 +26,6 @@ export default function page({ params }) {
         />
         :
         <div className="bg-white shadow-md sm:rounded-lg overflow-hidden">
-          <SearchStudents search={setSearch} searchHander={searchHander} />
           <Students>
             {/* Head Start */}
             {data.level.students.map((student) => (

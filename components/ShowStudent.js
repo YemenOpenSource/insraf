@@ -1,8 +1,8 @@
 "use client";
-import { useRef } from "react";
-import { PDFExport, Text } from "@progress/kendo-react-pdf";
 import Image from "next/image";
 import insarf_blue from "@/public/insarf_blue.svg";
+import { useRef } from "react";
+import { PDFExport } from "@progress/kendo-react-pdf";
 
 export default function ShowStudent(props) {
   const { name, regNo, level, classification } = props;
