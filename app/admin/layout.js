@@ -23,6 +23,7 @@ export default function layout({ children }) {
         .replace('register', 'مرحباً بك')
         .replace('added', 'إضافة')
         .replace('search', 'البحث')
+        .replace('profile', 'الملف الشخصي')
     };
 
     useEffect(() => {

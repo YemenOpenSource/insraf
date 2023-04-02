@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components";
-import { Show } from "react-iconly";
+import { Logout } from "react-iconly";
 import { deleteCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 
@@ -28,7 +28,7 @@ export default function Welcome() {
             <button className="mt-4 m-auto flex justify-center items-center font-bolder bg-blue-700 selection:bg-blue-50 selection:text-blue-900 px-3 py-2 text-sm font-medium text-center text-white hover:bg-blue-800"
               onClick={() => logout()}
             >
-              <Show
+              <Logout
 
                 style={{ marginLeft: 6 }}
                 primaryColor='white'

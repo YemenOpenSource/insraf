@@ -33,6 +33,10 @@ export default function SubHeader() {
         {
             title: "إضافة",
             slug: "added",
+        },
+        {
+            title: "بروفايل",
+            slug: "profile",
         }
     ];
 
