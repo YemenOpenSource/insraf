@@ -8,37 +8,48 @@ datasource db {
 }
 
 model User {
-  id            Int         @id @default(autoincrement())
-  name          String      @db.VarChar(100)
-  email         String      @unique
-  password      String
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(100)
+  email    String @unique
+  password String
 }
 
 model Department {
-  id            Int         @id @default(autoincrement())
-  name          String
-  description   String
-  levels        Level[]
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  levels      Level[]
 }
 
 model Level {
-  id            Int         @id @default(autoincrement())
-  name          String
-  students      Student[]
-  department    Department? @relation(fields: [departmentId], references: [id])
-  departmentId  Int?
+  id           Int         @id @default(autoincrement())
+  name         String
+  students     Student[]
+  department   Department? @relation(fields: [departmentId], references: [id])
+  departmentId Int?
 }
 
 model Student {
-  id             Int         @id @default(autoincrement())
+  id             Int          @id @default(autoincrement())
   name           String
   date           String
   register       Int
   classification String
   password       String
   gender         Gender
-  level          Level?      @relation(fields: [levelId], references: [id])
+  level          Level?       @relation(fields: [levelId], references: [id])
   levelId        Int?
+  Attendance     Attendance[]
+}
+
+model Attendance {
+  id          Int      @id @default(autoincrement())
+  subject     String
+  signInTime  DateTime @default(now())
+  signOutTime DateTime
+  date        DateTime
+  student     Student? @relation(fields: [studentId], references: [id])
+  studentId   Int?
 }
 
 enum Gender {

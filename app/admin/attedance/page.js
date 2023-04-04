@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { PDFExport } from "@progress/kendo-react-pdf";
-import { Show, Edit } from "react-iconly";
+import { Show, Paper } from "react-iconly";
 const data = [
   {
     subject: "Computer Network",
@@ -67,7 +67,7 @@ export default function page() {
                 type="button"
                 className="inline-flex mx-2 items-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-blue-500 hover:bg-blue-700"
               >
-                <Edit primaryColor="white" stroke="bold" size="medium" />
+                <Paper primaryColor="white" stroke="bold" size="medium" />
               </button>
               <button
                 type="button"
