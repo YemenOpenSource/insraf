@@ -24,6 +24,7 @@ export default function layout({ children }) {
         .replace('added', 'إضافة')
         .replace('search', 'البحث')
         .replace('profile', 'الملف الشخصي')
+        .replace('attedance', 'التحضير')
     };
 
     useEffect(() => {
