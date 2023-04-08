@@ -24,9 +24,9 @@ model Department {
 model Level {
   id           Int         @id @default(autoincrement())
   name         String
-  students     Student[]
-  department   Department? @relation(fields: [departmentId], references: [id])
   departmentId Int?
+  department   Department? @relation(fields: [departmentId], references: [id])
+  students     Student[]
 }
 
 model Student {
@@ -37,19 +37,19 @@ model Student {
   classification String
   password       String
   gender         Gender
-  level          Level?       @relation(fields: [levelId], references: [id])
   levelId        Int?
   Attendance     Attendance[]
+  level          Level?       @relation(fields: [levelId], references: [id])
 }
 
 model Attendance {
   id          Int      @id @default(autoincrement())
   subject     String
   signInTime  DateTime @default(now())
-  signOutTime DateTime
-  date        DateTime
-  student     Student? @relation(fields: [studentId], references: [id])
+  signOutTime String   @default("-")
+  date        String
   studentId   Int?
+  student     Student? @relation(fields: [studentId], references: [id])
 }
 
 enum Gender {

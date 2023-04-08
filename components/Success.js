@@ -17,11 +17,11 @@ export default function Success({ name, logout }) {
         <Container>
             <Main>
                 <Image src={verified} className="w-[200px] select-none mx-auto mb-4" alt="insarf logo" priority />
-                <h1 className="text-center font-regular text-lg">مرحباً بك في إنصراف : <span className="font-bolder">{name}</span> 👋</h1>
+                <h1 className="text-center font-regular text-lg">مرحباً بك في إنصراف : <p className="font-bolder">{name} 🔥👋</p></h1>
                 <div className="flex justify-evenly">
                     <Link href={"/admin"}>
                         <Button>
-                            إدارة الموقع
+                            إلادارة
                         </Button>
                     </Link>
                     <Link href={"/auth/profile"}>
@@ -31,7 +31,7 @@ export default function Success({ name, logout }) {
                     </Link>
                     <Link href={"/admin"}>
                         <Button onClick={() => logout()}>
-                          تسجيل خروج
+                           خروج
                         </Button>
                     </Link>
                 </div>

@@ -33,6 +33,16 @@ export const typeDefs = gql`
     level: Level!
   }
 
+  type Attendance {
+    id: ID!
+    subject: String
+    signInTime: String
+    signOutTime: String
+    date: String
+    studentId: Int
+    student: Student
+  }
+
   type AuthData {
     userId: ID!
     token: String!
@@ -42,7 +52,7 @@ export const typeDefs = gql`
   enum Gender {
     MALE
     FEMALE
-  } 
+  }
 
   input UserInput {
     name: String!
@@ -80,6 +90,7 @@ export const typeDefs = gql`
     students: [Student]
     studentsByLevel(levelId: Int!): [Student]
     search(contains: String): [Student]
+    searchAttendance(contains: String): [Attendance]
   }
 
   type Mutation {

@@ -4,6 +4,7 @@ import fs from "fs";
 import jwt from "jsonwebtoken";
 import { isLoggedin } from "@/middleware/isLoggedin";
 import { combineResolvers } from "graphql-resolvers";
+import { transformAttedance } from "@/helper/transform";
 
 export const students = {
   Gender: {
@@ -67,18 +68,38 @@ export const students = {
       });
     }),
     search: combineResolvers(isLoggedin, async (_, { contains }) => {
-      const words = contains? contains : ""
+      const words = contains ? contains : "";
       try {
         let student = await prisma.student.findMany({
           where: {
             name: {
               contains: words,
-            }
-          }
-        })
-        return student
+            },
+          },
+        });
+        return student;
       } catch (error) {
         throw error;
+      }
+    }),
+    searchAttendance: combineResolvers(isLoggedin, async (_, { contains }) => {
+      const words = contains ? contains : "";
+      if (contains) {
+        let attendance = await prisma.attendance.findMany({
+          where: {
+            student: {
+              name: {
+                contains: words,
+              },
+            },
+          },
+          include: {
+            student: true,
+          },
+        });
+        return attendance.map((attendance) => transformAttedance(attendance));;
+      } else {
+        return []
       }
     }),
   },
@@ -104,13 +125,13 @@ export const students = {
         });
 
         // Generate the qr by using the register
-        const data = jwt.sign(`${register},${password}`, process.env.JWT)
+        const data = jwt.sign(`${register},${password}`, process.env.JWT);
         const qrDataURL = QRcode.toDataURL(data, function (err, url) {
           const qrImageBuffer = Buffer.from(url.split(",")[1], "base64");
           const qrImagePath = `public/qr/${register}.png`;
           fs.writeFileSync(qrImagePath, qrImageBuffer);
         });
-        
+
         return student;
       } catch (error) {
         throw error;

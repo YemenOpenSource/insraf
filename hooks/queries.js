@@ -87,6 +87,22 @@ export const SEARCH_QUERY = gql`
   }
 `;
 
+export const ATTENDANCE_QUERY = gql`
+  query SearchAttendance($contains: String) {
+    searchAttendance(contains: $contains) {
+      id
+      subject
+      signInTime
+      signOutTime
+      date
+      student {
+        name
+        register
+      }
+    }
+  }
+`;
+
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {

@@ -67,7 +67,7 @@ export default function ShowStudent(props) {
                     <dt className="text-sm font-bolder text-gray-500">
                       القسم :
                     </dt>
-                    <dd className="mt-1 text-sm text-blue-700 font-sans">
+                    <dd className="mt-1 text-sm text-blue-700 font-bolder">
                       {classification}
                     </dd>
                   </div>

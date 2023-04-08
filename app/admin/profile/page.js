@@ -29,23 +29,23 @@ export default function Profile() {
         </div>
         <div>
           <div>
-            <h3 className="text-lg leading-6 font-medium text-blue-700 text-center mt-4">
+            <h3 className="text-lg leading-6 font-medium font-bolder text-blue-700 text-center mt-4">
               معلومات الشخصية
             </h3>
-            <p className="mt-1 text-sm text-gray-500 text-center">
+            <p className="mt-1 text-sm text-gray-500 text-center font-regular">
               معلومات الشخصية لمستخدم الحالي
             </p>
           </div>
           <div className="mt-5 border-t border-gray-200">
             <dl className="sm:divide-y sm:divide-gray-200">
               <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                <dt className="text-sm font-medium text-gray-500">الاسم</dt>
-                <dd className="mt-1 text-sm text-blue-700 sm:mt-0 sm:col-span-2 font-medium">
+                <dt className="text-sm font-medium text-gray-500 font-bolder">الاسم</dt>
+                <dd className="mt-1 text-sm text-blue-700 sm:mt-0 sm:col-span-2 font-bolder font-medium">
                   {data?.user?.name}
                 </dd>
               </div>
               <div className="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
-                <dt className="text-sm font-medium text-gray-500">
+                <dt className="text-sm font-medium text-gray-500 font-bolder">
                   البريد الإكتروني
                 </dt>
                 <dd className="mt-1 text-sm text-blue-700 sm:mt-0 sm:col-span-2 font-medium">

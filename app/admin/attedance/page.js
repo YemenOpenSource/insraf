@@ -1,111 +1,185 @@
 "use client";
-import { useRef } from "react";
-import { PDFExport } from "@progress/kendo-react-pdf";
-import { Show, Paper } from "react-iconly";
-const data = [
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import {
+  ArrowPathIcon,
+  CalendarIcon,
+  TruckIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
+import { Fragment } from "react";
+import { useQuery } from "@apollo/client";
+import { ATTENDANCE_QUERY } from "@/hooks/queries";
+
+const perks = [
   {
-    subject: "Computer Network",
-    timein: "7:00 ص",
-    timeout: "10:00 ص",
-    date: "2023/2/10",
-    color: `yellow`,
+    name: "تحليل وقت الدخول والخروج",
+    description: "التحليل",
+    icon: CalendarIcon,
   },
   {
-    subject: "Elective II",
-    timein: "10:00 ص",
-    timeout: "12:00 م",
-    date: "2023/2/10",
-    color: "green",
+    name: "المزامنة تلقائياً لجميع الطلاب",
+    description: "المزامنة",
+    icon: ArrowPathIcon,
   },
   {
-    subject: "Math II",
-    timein: "12:00 ص",
-    timeout: "1:00 م",
-    date: "2023/2/10",
-    color: "red",
-  },
-  {
-    subject: "Computer Network",
-    timein: "7:00 ص",
-    timeout: "10:00 ص",
-    date: "2023/2/10",
-    color: "red",
-  },
-  {
-    subject: "Elective II",
-    timein: "10:00 ص",
-    timeout: "12:00 م",
-    date: "2023/2/10",
-    color: "blue",
+    name: "الوصول السريع للطلاب",
+    description: "سريع",
+    icon: TruckIcon,
   },
 ];
 
 export default function page() {
-  const pdfExportComponent = useRef(null);
+  const [search, setSearch] = useState("");
 
-  const handleExportWithComponent = () => {
-    pdfExportComponent.current.save();
-  };
+  const { loading, error, data } = useQuery(ATTENDANCE_QUERY, {
+    variables: { contains: search },
+  });
 
   return (
     <div className="flex flex-col w-screen h-full px-2 sm:px-4 select-none">
-      <PDFExport
-        ref={pdfExportComponent}
-        fileName={`log-attedance`}
-        title={"attedance"}
-        author={"mansour_tech"}
-      >
-        <div className="flex flex-auto flex-col bg-white p-4 md:p-8 rounded-md shadow mb-4">
-          <div className="border-b border-gray-200 pb-5 sm:flex sm:items-center sm:justify-between mb-3">
-            <h3 className="font-semibold leading-6 text-blue-700 font-bolder text-center text-lg">
-              منصور أحمد منصور
-              <span className=" block text-center text-red-500">186000</span>
-            </h3>
-            <div className="mt-3 flex sm:ml-4 sm:mt-0 justify-center">
-              <button
-                onClick={handleExportWithComponent}
-                type="button"
-                className="inline-flex mx-2 items-center rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-blue-500 hover:bg-blue-700"
-              >
-                <Paper primaryColor="white" stroke="bold" size="medium" />
-              </button>
-              <button
-                type="button"
-                className="inline-flex items-center rounded-md bg-blue-700 px-3 py-2 text-sm font-semibold shadow-sm ring-1 ring-inset ring-blue-700 hover:bg-blue-700"
-              >
-                <Show primaryColor="white" stroke="bold" size="medium" />
-              </button>
-            </div>
-          </div>
-          <ol
-            role="list"
-            className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4"
-          >
-            {data.map((d, index) => (
-              <li
-                key={index}
-                className={`group flex flex-col h-20 rounded-lg bg-blue-100 p-2 text-xs leading-5 hover:bg-blue-100`}
-              >
-                <p
-                  className={`font-semibold text-blue-700 text-center text-[15px]`}
-                >
-                  {d.subject}
-                </p>
-                <p
-                  className={`text-blue-500 group-hover:text-blue-700 text-center`}
-                >
-                  <time dateTime="2022-01-12T12:00">{d.timein}</time> -
-                  <time dateTime="2022-01-12T12:00"> {d.timeout}</time> -
-                  <time className="fo font-bold" dateTime="2022-01-12T12:00">
-                    {" "}
-                    {d.date}
-                  </time>
-                </p>
-              </li>
-            ))}
-          </ol>
+      <div className="flex flex-auto flex-col bg-white rounded-md shadow mt-2 mb-4">
+        <div className="mx-auto text-center px-4 mt-8 mb-4">
+          <h2 className="text-3xl font-bold font-bolder tracking-tight text-gray-900 sm:text-4xl">
+            صفحة البحث
+          </h2>
+          <p className="mx-auto mt-2 max-w-xl text-lg leading-8 text-gray-600 font-regular">
+            صفحة عرض تفاصيل الحضور 🎯👌
+          </p>
         </div>
-      </PDFExport>
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <div
+            dir="ltr"
+            className="mx-auto max-w-7xl lg:flex lg:justify-center lg:divide-x lg:divide-y-0 lg:py-2"
+          >
+            <Search search={setSearch} />
+          </div>
+        </div>
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <div
+            dir="ltr"
+            className="mx-auto max-w-7xl divide-y divide-gray-200 lg:flex lg:justify-center lg:divide-x lg:divide-y-0 lg:py-8"
+          >
+            {perks.map((perk, perkIdx) => (
+              <div key={perkIdx} className="py-8 lg:flex-none lg:py-0">
+                <div className="mx-auto flex max-w-md items-center px-4 lg:max-w-none lg:px-8">
+                  <div className="mr-4 flex flex-auto flex-col-reverse">
+                    <h3 className="font-medium text-gray-900 text-right font-bolder">
+                      {perk.name}
+                    </h3>
+                    <p className="text-sm text-gray-500 text-right font-regular">
+                      {perk.description}
+                    </p>
+                  </div>
+                  <perk.icon
+                    className="h-8 w-8 flex-shrink-0 text-blue-700"
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {data?.searchAttendance[0]?.student?.name == undefined && search && (
+        <div className="flex justify-center items-center bg-blue-700 shadow mt-2 p-2">
+          <p className="w-2/4 text-center font-bolder mb-2 items-center bg-blue-700 px-2 py-0.5 text-md font-medium text-white">
+            لا يوجد نتائج بحث بهذا الاسم {search} !
+          </p>
+        </div>
+      )}
+      {data?.searchAttendance[0]?.student?.name && (
+        <Fragment>
+          <div className="flex justify-center items-center bg-blue-700 shadow mt-2 p-2">
+            <p className="w-2/4 text-center font-bolder mb-2 items-center bg-blue-700 px-2 py-0.5 text-md font-medium text-white">
+              الكيو آر
+            </p>
+            <p className="w-2/4 text-center text-md font-bolder mb-2 items-center bg-blue-700 px-2 py-0.5 font-medium text-white">
+              اسم الطالب
+            </p>
+            <p className="w-2/4 text-center font-bolder mb-2 items-center bg-blue-700 px-2 py-0.5 text-md font-medium text-white">
+              رقم القيد
+            </p>
+          </div>
+          <div className="flex bg-white shadow p-2 justify-center items-center">
+            <p className="w-2/4 text-center text-md font-bolder mb-2 items-center px-2 py-0.5 font-medium text-blue-700">
+              <Image
+                src={require(`@/public/qr/${data?.searchAttendance[0]?.student?.register}.png`)}
+                className="w-[80px] h-[80px] text-center select-none m-auto"
+                alt="qr"
+                priority
+              />
+            </p>
+            <p className="w-2/4 text-center font-bolder mb-2 items-center px-2 py-0.5 text-md font-medium text-gray-700">
+              {data?.searchAttendance[0]?.student?.name}
+            </p>
+            <p className="w-2/4 text-center font-bolder mb-2 items-center px-2 py-0.5 text-md font-medium text-blue-700">
+              {data?.searchAttendance[0]?.student?.register}
+            </p>
+          </div>
+          <br></br>
+
+          <div className="flex justify-center items-center bg-[#fec63d] shadow mt-2 p-2">
+            <p className="w-2/4 text-center text-md font-bolder mb-2 items-center bg-[#fec63d] px-2 py-0.5 font-medium text-[#614c19]">
+              اسم المادة
+            </p>
+            <p className="w-2/4 text-center font-bolder mb-2 items-center bg-[#fec63d] px-2 py-0.5 text-md font-medium text-[#614c19]">
+              الدخول
+            </p>
+            <p className="w-2/4 text-center font-bolder mb-2 items-center bg-[#fec63d] px-2 py-0.5 text-md font-medium text-[#614c19]">
+              الخروج
+            </p>
+          </div>
+          {data?.searchAttendance.map((attedance) => (
+            <div key={attedance.id} className="flex bg-white shadow mt-4 p-2">
+              <p className="w-2/4 text-center text-md font-bolder mb-2 items-center px-2 py-0.5 font-medium text-blue-700">
+                {attedance.subject}
+              </p>
+              <p className="w-2/4 text-center font-bolder mb-2 items-center px-2 py-0.5 text-md font-medium text-gray-700">
+                {attedance.signInTime}
+              </p>
+              <p className="w-2/4 text-center font-bolder mb-2 items-center px-2 py-0.5 text-md font-medium text-gray-700">
+                {attedance.signOutTime}
+              </p>
+            </div>
+          ))}
+          <br></br>
+        </Fragment>
+      )}
+    </div>
+  );
+}
+
+function Search(props) {
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    props.search(search);
+  }, [search]);
+
+  return (
+    <div>
+      <div className="mt-2 flex rounded-md px-4">
+        <button
+          type="button"
+          className="relative -mr-px inline-flex items-center gap-x-1.5 rounded-l-md px-3 
+          py-2 text-sm font-semibold text-white ring-1 ring-inset ring-blue-700 
+          hover:bg-blue-700 bg-blue-700"
+        >
+          إبحث
+        </button>
+        <div className="relative flex flex-grow items-stretch focus-within:z-10">
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+            <UsersIcon className="h-5 w-5 text-blue-700" aria-hidden="true" />
+          </div>
+          <input
+            type="search"
+            className="block md:w-96 w-full font-regular rounded-none rounded-r-md outline-none text-right border-0 py-1.5 pr-10 text-gray-900 ring-2 ring-inset ring-blue-700 placeholder:text-blue-700 focus:ring-2 focus:ring-inset focus:ring-blue-700 focus:text-blue-700 sm:text-sm sm:leading-6"
+            placeholder="صندوق البحث"
+            onChange={({ target }) => setSearch(target.value)}
+          />
+        </div>
+      </div>
     </div>
   );
 }
