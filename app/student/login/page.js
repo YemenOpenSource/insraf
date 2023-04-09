@@ -17,7 +17,7 @@ import { QrReader } from 'react-qr-reader';
             console.info(error);
           }
         }}
-        style={{ width: '100%' }}
+        style={{ width: '20%', }}
       />
       <p>{data}</p>
     </>

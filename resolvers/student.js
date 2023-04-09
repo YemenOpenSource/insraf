@@ -3,6 +3,7 @@ import QRcode from "qrcode";
 import fs from "fs";
 import jwt from "jsonwebtoken";
 import { isLoggedin } from "@/middleware/isLoggedin";
+import { GraphQLError } from "graphql";
 import { combineResolvers } from "graphql-resolvers";
 import { transformAttedance } from "@/helper/transform";
 
@@ -97,11 +98,28 @@ export const students = {
             student: true,
           },
         });
-        return attendance.map((attendance) => transformAttedance(attendance));;
+        return attendance.map((attendance) => transformAttedance(attendance));
       } else {
-        return []
+        return [];
       }
     }),
+    loginStudent: async (_, { token }) => {
+      try {
+        const decoded = jwt.verify(token, process.env.JWT);
+        const student = await prisma.student.findUnique({
+          where: {
+            register: Number(decoded.split(",")[0]),
+          },
+        });
+        if (!student) throw new GraphQLError("الطالب غير موجود !");
+        const isEqual = student.password === decoded.split(",")[1];
+        if (!isEqual)
+          throw new GraphQLError("كلمة السر غير متطابقة مع رقم القيد");
+        return student;
+      } catch (error) {
+        throw error;
+      }
+    },
   },
   Mutation: {
     createStudent: combineResolvers(isLoggedin, async (_, { studentInput }) => {
@@ -131,7 +149,6 @@ export const students = {
           const qrImagePath = `public/qr/${register}.png`;
           fs.writeFileSync(qrImagePath, qrImageBuffer);
         });
-
         return student;
       } catch (error) {
         throw error;
@@ -149,5 +166,37 @@ export const students = {
         throw error;
       }
     }),
+    signInAttendance: async (_, { attendanceInput, studentId }) => {
+      try {
+        const attendance = await prisma.attendance.create({
+          data: {
+            ...attendanceInput,
+            student: {
+              connect: {
+                id: Number(studentId),
+              },
+            },
+          },
+        });
+        return attendance;
+      } catch (error) {
+        throw error;
+      }
+    },
+    signOutAttendance: async (_, { id }) => {
+      try {
+        const attendance = await prisma.attendance.update({
+          where: {
+            id: Number(id),
+          },
+          data: {
+            signOutTime: new Date(),
+          },
+        });
+        return attendance;
+      } catch (error) {
+        throw error;
+      }
+    },
   },
 };

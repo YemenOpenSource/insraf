@@ -80,6 +80,11 @@ export const typeDefs = gql`
     description: String!
   }
 
+  input attendanceInput {
+    subject: String
+    date: String
+  }
+
   type Query {
     student(id: ID!): Student
     user(id: ID!): User
@@ -91,6 +96,7 @@ export const typeDefs = gql`
     studentsByLevel(levelId: Int!): [Student]
     search(contains: String): [Student]
     searchAttendance(contains: String): [Attendance]
+    loginStudent(token: String!): Student
   }
 
   type Mutation {
@@ -101,5 +107,10 @@ export const typeDefs = gql`
     createDepartment(departmentInput: departmentInput!): Department
     deleteStudent(id: ID!): String
     deleteDepartment(id: ID!): String
+    signInAttendance(
+      attendanceInput: attendanceInput
+      studentId: Int
+    ): Attendance
+    signOutAttendance(id: ID!): Attendance
   }
 `;

@@ -33,7 +33,7 @@ model Student {
   id             Int          @id @default(autoincrement())
   name           String
   date           String
-  register       Int
+  register       Int          @unique
   classification String
   password       String
   gender         Gender
