@@ -17,6 +17,7 @@
 
 # images
 /public/qr
+/public/images
 
 # misc
 .DS_Store

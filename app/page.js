@@ -1,24 +1,30 @@
 "use client";
-import { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { SEARCH_QUERY } from "@/hooks/queries";
-import { Loading } from "@/components";
+import Head from "next/head";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import PrimaryFeatures from "@/components/PrimaryFeatures";
+import SecondaryFeatures from "@/components/SecondaryFeatures";
+import CallToAction from "@/components/CallToAction";
 
-export default function SearchBox() {
-  const [contains, setContains] = useState();
-
-  const { loading, error, data } = useQuery(SEARCH_QUERY, {
-    variables: { contains: contains },
-  });
-
-  if (loading) return <Loading />;
-  if (error) return <p>Error</p>;
-
+export default function Home() {
   return (
-    <div>
-      <div className="bg-red-100 w-96 h-80 m-auto">
-        <input onChange={({ target }) => setContains(target.value)} />
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>TaxPal - Accounting made simple for small businesses</title>
+        <meta
+          name="description"
+          content="Most bookkeeping software is accurate, but hard to use. We make the opposite trade-off, and hope you don’t get audited."
+        />
+      </Head>
+      <Header />
+      <main className="bg-white">
+        <Hero />
+        <PrimaryFeatures />
+        <SecondaryFeatures />
+        <CallToAction />
+      </main>
+      <Footer />
+    </>
   );
 }

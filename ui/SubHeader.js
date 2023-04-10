@@ -9,9 +9,9 @@ export const Title = tw.span`mr-4 sm:mr-0 select-none`;
 export const Nav = tw.span`bg-blue-700 w-full h-16`;
 
 export const Head = tw.div`
-  ${(p) => p.$border ? 'border-b border-b-slate-200' : 'border-none'}
-  ${(p) => p.$between ? 'justify-between' : null}
-  ${(p) => p.$overflow ? 'overflow-x-auto' : null}
+  ${(p) => (p.$border ? "border-b border-b-slate-200" : "border-none")}
+  ${(p) => (p.$between ? "justify-between" : null)}
+  ${(p) => (p.$overflow ? "overflow-x-auto" : null)}
   flex 
   h-16 
   items-center 
@@ -21,7 +21,10 @@ export const Head = tw.div`
 `;
 
 export const Button = tw.button`
-  ${(p) => p.$active ? 'text-blue-700 border-blue-700 font-bolder mr-4' : 'text-gray-500 border-transparent font-regular'}
+  ${(p) =>
+    p.$active
+      ? "text-blue-700 border-blue-700 font-bolder mr-4"
+      : "text-gray-500 border-transparent font-regular"}
   mb-[-20px] 
   select-none 
   inline-flex 
@@ -38,3 +41,6 @@ export const Button = tw.button`
   focus:ring-offset-0 
   text-[17px]
 `;
+
+// "vercel-build": "prisma generate && prisma migrate deploy && next build",
+// "prisma:generate": "prisma generate"
