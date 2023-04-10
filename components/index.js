@@ -9,7 +9,6 @@ import ShowStudent from "@/components/ShowStudent";
 import Attendance from "@/components/Attendance";
 import HeadStudent from "@/components/HeadStudent";
 import CreateStudent from "@/components/CreateStudent";
-import Avater from "@/components/Avater";
 import Category from "@/components/Category";
 import Breadcrumb from "@/components/Breadcrumb";
 import Success from "@/components/Success";
@@ -31,7 +30,6 @@ export {
     Attendance,
     HeadStudent,
     CreateStudent,
-    Avater,
     Category,
     Breadcrumb,
     Success,
