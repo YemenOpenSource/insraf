@@ -11,27 +11,27 @@ import { Tab } from "@headlessui/react";
 
 const features = [
   {
-    title: "Payroll",
+    title: "الإحصائيات",
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+      "هو نظام يتم استخدامه لتحليل البيانات المتعلقة بالمستخدمين، التصنيفات، نسبة الحضور و نسبة الغياب",
     image: screenshotPayroll,
   },
   {
-    title: "Claim expenses",
+    title: "التصنيفات",
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+      "هو نظام يساعد في تنظيم وترتيب الطلاب على الموقع كلاً حسب المستوى والقسم الذي ينتمي له لتوفير الوقت والجهد في البحث عنهم كما يساعد في تحسين تجربة المستخدم وزيادة فاعلية الموقع",
     image: screenshotExpenses,
   },
   {
-    title: "VAT handling",
+    title: "نظام الطلاب",
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+      "نظام البحث يعتبر من الأدوات الأساسية التي تساعد مسؤولين الموقع على الوصول إلى اسم الطالب الذي يبحثون عنه بسرعة وسهولة. فهو يقوم بتحليل محتوى المواقع وفهرستها بطريقة تجعلها متاحة للبحث والوصول إليها بكل سهولة",
     image: screenshotReporting,
   },
   {
-    title: "Reporting",
+    title: "التحضير",
     description:
-      "Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.",
+      "تحليل الوثت - وقت دخول وخروج الطالب",
     image: screenshotVatReturns,
   },
 ];
@@ -60,14 +60,6 @@ export default function PrimaryFeatures() {
       aria-label="Features for running your books"
       className="relative overflow-hidden bg-blue-700 pb-28 pt-20 sm:py-32"
     >
-      <Image
-        className="absolute left-1/2 top-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
-        src={"/images/background-features.jpg"}
-        alt=""
-        width={2245}
-        height={1636}
-        unoptimized
-      />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl font-bolder">
@@ -90,7 +82,7 @@ export default function PrimaryFeatures() {
                     <div
                       key={feature.title}
                       className={clsx(
-                        "group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6",
+                        "group relative rounded-full px-4 py-1 lg:rounded-r-xl lg:rounded-l-none lg:p-6 font-bolder",
                         selectedIndex === featureIndex
                           ? "bg-white lg:bg-white/10 lg:ring-1 lg:ring-inset lg:ring-white/10"
                           : "hover:bg-white/10 lg:hover:bg-white/5"
@@ -105,13 +97,13 @@ export default function PrimaryFeatures() {
                               : "text-blue-100 hover:text-white lg:text-white"
                           )}
                         >
-                          <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
+                          <span className="absolute inset-0 rounded-full font-bolder lg:rounded-r-xl lg:rounded-l-none" />
                           {feature.title}
                         </Tab>
                       </h3>
                       <p
                         className={clsx(
-                          "mt-2 hidden text-sm lg:block",
+                          "mt-2 hidden text-sm lg:block font-regular",
                           selectedIndex === featureIndex
                             ? "text-white"
                             : "text-blue-100 group-hover:text-white"

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import PrimaryFeatures from "@/components/PrimaryFeatures";
 import SecondaryFeatures from "@/components/SecondaryFeatures";
+import AppFeatures from "@/components/AppFeatures";
 import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <PrimaryFeatures />
         <SecondaryFeatures />
+        <AppFeatures />
         <CallToAction />
       </main>
       <Footer />

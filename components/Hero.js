@@ -24,7 +24,7 @@ export default function Hero() {
       لوحة تحكم تسمح لك با إدارة الطلاب من إضافة وعرض جميع التفاصيل الخاصة بالطلاب
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="/admin">هيا نبدأ</Button>
+
       </div>
     </Container>
   )
