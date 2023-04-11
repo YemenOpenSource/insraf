@@ -21,7 +21,7 @@ export default function Hero() {
         برنامج إدارة الطلاب
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-500 font-regular select-none">
-      لوحة تحكم تسمح لك با إدارة الطلاب من إضافة وعرض جميع التفاصيل الخاصة بالطلاب
+      لوحة تحكم تسمح لك با إدارة الطلاب من إضافة وعرض لجميع تفاصيل الخاصة بالطلاب
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
 
