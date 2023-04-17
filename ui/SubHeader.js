@@ -43,4 +43,4 @@ export const Button = tw.button`
 `;
 
 // "vercel-build": "prisma generate && prisma migrate deploy && next build",
-// "prisma:generate": "prisma generate"
+// "prisma:generate":"prisma generate"
