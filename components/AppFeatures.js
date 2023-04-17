@@ -4,6 +4,7 @@ import Container from "./ContainerLoading";
 import screenshotContacts from "@/public/images/screenshots/soon.png";
 import screenshotInventory from "@/public/images/screenshots/soon.png";
 import screenshotProfitLoss from "@/public/images/screenshots/soon.png";
+import Button from "./Button";
 import { Tab } from "@headlessui/react";
 
 const features = [
@@ -52,7 +53,7 @@ function FeaturesMobile() {
   return (
     <div
       dir="rtl"
-      className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden"
+      className="-mx-4 mt-5 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden"
     >
       {features.map((feature) => (
         <div key={feature.name}>
@@ -76,7 +77,7 @@ function FeaturesMobile() {
 
 function FeaturesDesktop() {
   return (
-    <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
+    <Tab.Group as="div" className="hidden lg:mt-5 lg:block">
       {({ selectedIndex }) => (
         <>
           <Tab.List dir="rtl" className="grid grid-cols-3 gap-x-8">
@@ -138,8 +139,13 @@ export default function SecondaryFeatures() {
             👷‍♂️📚 تطبيق الطالب
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700 font-regular text-center">
-           تطبيق إندرويد مخصص لطالب لإدارة التحضير
+            تطبيق ويب مخصص لطالب لإدارة التحضير
           </p>
+          <div className="my-5 flex justify-center">
+            <Button href="/student/login">
+              تجربة تطبيق الطالب
+            </Button>
+          </div>
         </div>
         <FeaturesMobile />
         <FeaturesDesktop />
