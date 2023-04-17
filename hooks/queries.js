@@ -103,6 +103,17 @@ export const ATTENDANCE_QUERY = gql`
   }
 `;
 
+export const STATISTICS_QUERY = gql`
+  query Statistics {
+    statistics {
+      attendanceCount
+      attendanceAbsenceCount
+      departmentCount
+      userCount
+    }
+  }
+`;
+
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {

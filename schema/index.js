@@ -43,6 +43,13 @@ export const typeDefs = gql`
     student: Student
   }
 
+  type Statistics {
+    userCount: Int
+    departmentCount: Int
+    attendanceCount: Int
+    attendanceAbsenceCount: Int
+  }
+
   type AuthData {
     userId: ID!
     token: String!
@@ -97,6 +104,7 @@ export const typeDefs = gql`
     search(contains: String): [Student]
     searchAttendance(contains: String): [Attendance]
     loginStudent(token: String!): Student
+    statistics: Statistics
   }
 
   type Mutation {

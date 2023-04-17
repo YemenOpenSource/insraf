@@ -4,11 +4,13 @@ import { users } from "@/resolvers/users";
 import { students } from "@/resolvers/student";
 import { Level } from "@/resolvers/Level";
 import { department } from "@/resolvers/department";
+import { statistics } from "@/resolvers/statistics";
 
 export const resolvers = merge(
     auth,
     users,
     students,
     Level,
-    department
+    department,
+    statistics
 );
