@@ -17,6 +17,7 @@ import Register from "@/components/Register";
 import Department from "@/components/Department";
 import Level from "@/components/Level";
 import Loading from "@/components/Loading";
+import Navbar from "@/components/Navbar";
 
 export {
     SubHeader,
@@ -37,5 +38,6 @@ export {
     Register,
     Department,
     Level,
-    Loading
+    Loading,
+    Navbar
 }
