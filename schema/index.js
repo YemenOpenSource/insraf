@@ -44,7 +44,7 @@ export const typeDefs = gql`
   }
 
   type Statistics {
-    userCount: Int
+    studentCount: Int
     departmentCount: Int
     attendanceCount: Int
     attendanceAbsenceCount: Int

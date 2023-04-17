@@ -109,7 +109,7 @@ export const STATISTICS_QUERY = gql`
       attendanceCount
       attendanceAbsenceCount
       departmentCount
-      userCount
+      studentCount
     }
   }
 `;

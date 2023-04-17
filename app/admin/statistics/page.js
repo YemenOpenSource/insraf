@@ -14,7 +14,7 @@ export default function page() {
   const stats = [
     {
       title: "عدد الطلاب",
-      number: data.statistics.userCount,
+      number: data.statistics.studentCount,
       color: "bg-blue-600"
     },
     {
