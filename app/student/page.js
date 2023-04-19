@@ -2,6 +2,7 @@
 import tw from "tailwind-styled-components";
 import clsx from "clsx";
 import { useState } from "react";
+import { XCircleIcon } from "@heroicons/react/20/solid";
 import { Slider, Login, Attedance, Logout } from "@/components/student";
 
 const Container = tw.div`max-w-7xl mx-auto p-2 sm:p-4`;
@@ -43,6 +44,27 @@ export default function page() {
     <Container>
       <div className="flex justify-center">{renderMarkers()}</div>
       <Card>
+        <div className="bg-red-50 p-4 mt-4">
+          <div className="flex">
+            <div className="flex-shrink-0">
+              <XCircleIcon
+                className="h-5 w-5 text-red-400"
+                aria-hidden="true"
+              />
+            </div>
+            <div className="ml-3">
+              <h3 className="text-sm text-red-800 font-bolder mr-2">خطأ</h3>
+              <div className="mt-2 text-sm text-red-700 font-bolder">
+                <ul
+                  role="list"
+                  className="list-disc space-y-1 pl-5 font-regular"
+                >
+                  <li>خطأ في بيانات QR</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <Page>
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white">
             <div>
@@ -64,12 +86,12 @@ export default function page() {
                   )}
                   {step == 1 && (
                     <Button $color="blue" onClick={() => setStep(step + 1)}>
-                      تسجيل الدخول
+                      دخول
                     </Button>
                   )}
                   {step == 2 && (
                     <Button $color="blue" onClick={() => setStep(step + 1)}>
-                       تحضير
+                      تحضير
                     </Button>
                   )}
                 </div>
