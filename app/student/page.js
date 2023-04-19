@@ -55,11 +55,21 @@ export default function page() {
                     </Button>
                   )}
                   {step === group.length - 1 && (
-                    <Button $color="blue">تحضير</Button>
+                    <Button $color="blue">خروج</Button>
                   )}
-                  {step < group.length - 1 && (
+                  {step < group.length - 1 && step != 1 && step != 2 && (
                     <Button $color="blue" onClick={() => setStep(step + 1)}>
                       التالي
+                    </Button>
+                  )}
+                  {step == 1 && (
+                    <Button $color="blue" onClick={() => setStep(step + 1)}>
+                      تسجيل الدخول
+                    </Button>
+                  )}
+                  {step == 2 && (
+                    <Button $color="blue" onClick={() => setStep(step + 1)}>
+                       تحضير
                     </Button>
                   )}
                 </div>

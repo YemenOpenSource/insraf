@@ -28,10 +28,8 @@ export default function success() {
                   Network
                 </th>
                 <td className="px-4 py-3 text-center">7:00 ص</td>
-                <td className="px-4 py-3 underline text-blue-700 font-bold text-center">
-                  <button className="bg-blue-700 m-auto hover:bg-blue-600 selection:bg-blue-50 selection:text-blue-900 text-sm p-3 rounded-sm text-white font-bolder flex justify-center items-center">
-                    خروج
-                  </button>
+                <td className="px-4 py-3 text-blue-700 font-bold text-center">
+                  -
                 </td>
               </tr>
             </tbody>
