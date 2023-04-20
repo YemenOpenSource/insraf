@@ -31,7 +31,7 @@ const features = [
   {
     title: "التحضير",
     description:
-      "تحليل الوثت - وقت دخول وخروج الطالب",
+      "تحليل الوقت - وقت دخول وخروج الطالب",
     image: screenshotVatReturns,
   },
 ];

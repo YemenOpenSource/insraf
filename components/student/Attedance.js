@@ -2,18 +2,38 @@
 import React, { useState } from "react";
 import { QrReader } from "react-qr-reader";
 
+// Define a component to handle QR code scanning
+function QRScanner() {
+  const [result, setResult] = useState(null);
+
+  // Function to handle scanning of QR code
+  const handleScan = (data) => {
+    if (data) {
+      setResult(data);
+    }
+  };
+
+  // Function to handle errors during scanning
+  const handleError = (err) => {
+    console.error(err);
+  };
+
+  // Render the QR reader component with appropriate props
+  return (
+    <QrReader
+      delay={300}
+      onError={handleError}
+      onScan={handleScan}
+      style={{ width: "100%" }}
+    />
+  );
+}
+
 export default function Attedance() {
-  const [data, setData] = useState("No result");
   return (
     <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white">
       <div>
-        <QrReader
-          onResult={(result) => {
-            if (!!result) {
-              setData(result?.text);
-            }
-          }}
-        />
+        <QRScanner />
         <div className="mt-2">
           <input
             type="email"
