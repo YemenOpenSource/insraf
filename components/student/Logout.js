@@ -20,7 +20,7 @@ export default function success() {
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b text-center">
+              <tr className="text-center">
                 <th
                   scope="row"
                   className="px-4 py-3 font-medium text-center text-blue-700 whitespace-nowrap font-bolder"

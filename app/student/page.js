@@ -20,7 +20,7 @@ ${(p) =>
 
 export default function page() {
   const [step, setStep] = useState(0);
-  const group = [<Slider />, <Login />, <Attedance />, <Logout />];
+  const group = [<Login />, <Login />, <Attedance />, <Logout />];
 
   function renderMarkers() {
     let markers = [];
@@ -44,7 +44,7 @@ export default function page() {
     <Container>
       <div className="flex justify-center">{renderMarkers()}</div>
       <Card>
-        <div className="bg-red-50 p-4 mt-4">
+{/*         <div className="bg-red-50 p-4 mt-4">
           <div className="flex">
             <div className="flex-shrink-0">
               <XCircleIcon
@@ -64,7 +64,7 @@ export default function page() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <Page>
           <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white">
             <div>

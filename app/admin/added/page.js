@@ -65,6 +65,7 @@ export default function page() {
         department: false,
         level: true,
       });
+      router.refresh();
     },
     onError: (error) => {
       setAlert({

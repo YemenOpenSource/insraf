@@ -103,23 +103,6 @@ export const students = {
         return [];
       }
     }),
-    loginStudent: async (_, { token }) => {
-      try {
-        const decoded = jwt.verify(token, process.env.JWT);
-        const student = await prisma.student.findUnique({
-          where: {
-            register: Number(decoded.split(",")[0]),
-          },
-        });
-        if (!student) throw new GraphQLError("الطالب غير موجود !");
-        const isEqual = student.password === decoded.split(",")[1];
-        if (!isEqual)
-          throw new GraphQLError("كلمة السر غير متطابقة مع رقم القيد");
-        return student;
-      } catch (error) {
-        throw error;
-      }
-    },
   },
   Mutation: {
     createStudent: combineResolvers(isLoggedin, async (_, { studentInput }) => {
@@ -194,6 +177,23 @@ export const students = {
           },
         });
         return attendance;
+      } catch (error) {
+        throw error;
+      }
+    },
+    loginStudent: async (_, { token }) => {
+      try {
+        const decoded = jwt.verify(token, process.env.JWT);
+        const student = await prisma.student.findUnique({
+          where: {
+            register: Number(decoded.split(",")[0]),
+          },
+        });
+        if (!student) throw new GraphQLError("الطالب غير موجود !");
+        const isEqual = student.password === decoded.split(",")[1];
+        if (!isEqual)
+          throw new GraphQLError("كلمة السر غير متطابقة مع رقم القيد");
+        return student;
       } catch (error) {
         throw error;
       }

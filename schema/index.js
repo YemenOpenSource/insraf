@@ -103,7 +103,6 @@ export const typeDefs = gql`
     studentsByLevel(levelId: Int!): [Student]
     search(contains: String): [Student]
     searchAttendance(contains: String): [Attendance]
-    loginStudent(token: String!): Student
     statistics: Statistics
   }
 
@@ -120,5 +119,6 @@ export const typeDefs = gql`
       studentId: Int
     ): Attendance
     signOutAttendance(id: ID!): Attendance
+    loginStudent(token: String): Student
   }
 `;
