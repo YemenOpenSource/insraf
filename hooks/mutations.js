@@ -74,3 +74,11 @@ export const CREATE_STUDENT = gql`
     }
   }
 `;
+
+export const LOGIN_STUDENT = gql`
+  mutation LoginStudent($token: String) {
+    loginStudent(token: $token) {
+      id
+    }
+  }
+`;

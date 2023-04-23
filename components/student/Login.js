@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { QrReader } from "react-qr-reader";
 import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon } from "@heroicons/react/20/solid";
+import { useId } from "react";
 import clsx from "clsx";
 
 const mailingLists = [
@@ -22,12 +23,16 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Attedance() {
+export default function Attedance(props) {
   const [data, setData] = useState("No result");
   const [facingMode, setFacingMode] = useState("environment");
   const [selectedMailingLists, setSelectedMailingLists] = useState(
     mailingLists[1]
   );
+
+  useEffect(() => {
+    props.token(data);
+  }, [data]);
 
   const handleCameraSwitch = () => {
     setFacingMode(facingMode === "environment" ? "user" : "environment");
@@ -95,6 +100,7 @@ export default function Attedance() {
       </RadioGroup>
       <QrReader
         {...qrReaderProps}
+        videoId={useId()}
         videoContainerStyle={{
           margin: 0,
           position: "relative",
@@ -105,14 +111,9 @@ export default function Attedance() {
           if (!!result) {
             setData(result?.text);
           }
-
-          if (!!error) {
-            console.info(error);
-          }
         }}
         // style={{ width: "100%" }}
       />
-      <p>{data}</p>
     </>
   );
 }

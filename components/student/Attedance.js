@@ -1,6 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { QrReader } from "react-qr-reader";
+import { XCircleIcon } from "@heroicons/react/20/solid";
+import { AuthContext } from "@/contexts";
 
 // Define a component to handle QR code scanning
 function QRScanner() {
@@ -15,7 +17,7 @@ function QRScanner() {
 
   // Function to handle errors during scanning
   const handleError = (err) => {
-    console.error(err);
+    // console.error(err);
   };
 
   // Render the QR reader component with appropriate props
@@ -23,20 +25,36 @@ function QRScanner() {
     <QrReader
       delay={300}
       constraints={{ facingMode: "environment" }}
-      videoContainerStyle={{
-        margin: 0,
-        position: "relative",
-        paddingTop: "77%",
-        // width: "150%",
-      }}
       onError={handleError}
-      onScan={handleScan}
+      onResult={handleScan}
       style={{ width: "100%" }}
     />
   );
 }
 
 export default function Attedance() {
+  const { id } = useContext(AuthContext);
+
+  if (id == "no auth") {
+    return (
+      <div className="bg-blue-700 p-4 my-4">
+        <div className="flex">
+          <div className="flex-shrink-0">
+            <XCircleIcon className="h-5 w-5 text-white" aria-hidden="true" />
+          </div>
+          <div className="ml-3">
+            <h3 className="text-sm text-white font-bolder mr-2">خطأ</h3>
+            <div className="mt-2 text-sm text-white font-bolder">
+              <ul role="list" className="list-disc space-y-1 pl-5 font-regular">
+                <li>لم يتم تسجيل الدخول</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white mt-4">
       <div>
