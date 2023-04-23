@@ -38,7 +38,7 @@ function QRScanner() {
 
 export default function Attedance() {
   return (
-    <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white">
+    <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white mt-4">
       <div>
         <QRScanner />
         <div className="mt-2">
