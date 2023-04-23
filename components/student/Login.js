@@ -28,11 +28,19 @@ export default function Attedance() {
   const [selectedMailingLists, setSelectedMailingLists] = useState(
     mailingLists[1]
   );
+  const [facingMode, setFacingMode] = useState("user");
+
+  const handleCameraSwitch = () => {
+    setFacingMode(facingMode === "user" ? "environment" : "user");
+  };
+
+  const qrReaderProps = {
+    constraints: { facingMode },
+  };
 
   useEffect(() => {
     setCamera(selectedMailingLists.description);
   }, [selectedMailingLists]);
-  
 
   return (
     <>
@@ -89,8 +97,9 @@ export default function Attedance() {
           ))}
         </div>
       </RadioGroup>
+      <button onClick={handleCameraSwitch}>Switch Camera</button>
       <QrReader
-        constraints={{ facingMode: camera.toString() }}
+        {...qrReaderProps}
         videoContainerStyle={{
           margin: 0,
           position: "relative",
