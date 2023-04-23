@@ -20,7 +20,7 @@ ${(p) =>
 
 export default function page() {
   const [step, setStep] = useState(0);
-  const group = [<Login />, <Login />, <Attedance />, <Logout />];
+  const group = [<Slider />, <Login />, <Attedance />, <Logout />];
 
   function renderMarkers() {
     let markers = [];

@@ -24,23 +24,18 @@ function classNames(...classes) {
 
 export default function Attedance() {
   const [data, setData] = useState("No result");
-  const [camera, setCamera] = useState("environment");
+  const [facingMode, setFacingMode] = useState("environment");
   const [selectedMailingLists, setSelectedMailingLists] = useState(
     mailingLists[1]
   );
-  const [facingMode, setFacingMode] = useState("user");
 
   const handleCameraSwitch = () => {
-    setFacingMode(facingMode === "user" ? "environment" : "user");
+    setFacingMode(facingMode === "environment" ? "user" : "environment");
   };
 
   const qrReaderProps = {
     constraints: { facingMode },
   };
-
-  useEffect(() => {
-    setCamera(selectedMailingLists.description);
-  }, [selectedMailingLists]);
 
   return (
     <>
@@ -53,6 +48,7 @@ export default function Attedance() {
             <RadioGroup.Option
               key={mailingList.id}
               value={mailingList}
+              onClick={handleCameraSwitch}
               className={({ checked, active }) =>
                 classNames(
                   checked ? "border-transparent" : "border-gray-300",
@@ -97,7 +93,6 @@ export default function Attedance() {
           ))}
         </div>
       </RadioGroup>
-      <button onClick={handleCameraSwitch}>Switch Camera</button>
       <QrReader
         {...qrReaderProps}
         videoContainerStyle={{

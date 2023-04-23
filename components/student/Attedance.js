@@ -22,6 +22,13 @@ function QRScanner() {
   return (
     <QrReader
       delay={300}
+      constraints={{ facingMode: "environment" }}
+      videoContainerStyle={{
+        margin: 0,
+        position: "relative",
+        paddingTop: "77%",
+        // width: "150%",
+      }}
       onError={handleError}
       onScan={handleScan}
       style={{ width: "100%" }}
