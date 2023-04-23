@@ -24,7 +24,7 @@ function classNames(...classes) {
 
 export default function Attedance() {
   const [data, setData] = useState("No result");
-  const [camera, setCamera] = useState();
+  const [camera, setCamera] = useState("environment");
   const [selectedMailingLists, setSelectedMailingLists] = useState(
     mailingLists[1]
   );
