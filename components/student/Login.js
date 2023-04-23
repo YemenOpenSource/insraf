@@ -9,6 +9,10 @@ export default function Attedance() {
     <>
       <QrReader
         constraints={{ facingMode: "environment" }}
+        videoContainerStyle={{
+          padding: 0,
+          margin: 0
+        }}
         onResult={(result, error) => {
           if (!!result) {
             setData(result?.text);
