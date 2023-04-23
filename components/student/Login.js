@@ -32,6 +32,7 @@ export default function Attedance() {
   useEffect(() => {
     setCamera(selectedMailingLists.description);
   }, [selectedMailingLists]);
+  
 
   return (
     <>
@@ -39,7 +40,7 @@ export default function Attedance() {
         value={selectedMailingLists}
         onChange={setSelectedMailingLists}
       >
-        <div className="my-4 grid grid-cols-2 gap-y-6 sm:grid-cols-2 sm:gap-x-4 gap-x-2">
+        <div className="my-4 grid grid-cols-2 gap-y-6 sm:grid-cols-2 sm:gap-x-4 gap-x-2 select-none">
           {mailingLists.map((mailingList) => (
             <RadioGroup.Option
               key={mailingList.id}
@@ -89,7 +90,7 @@ export default function Attedance() {
         </div>
       </RadioGroup>
       <QrReader
-        constraints={{ facingMode: camera }}
+        constraints={{ facingMode: camera.toString() }}
         videoContainerStyle={{
           margin: 0,
           position: "relative",
