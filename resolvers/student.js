@@ -103,6 +103,18 @@ export const students = {
         return [];
       }
     }),
+    showAttendance: async (_, { id }) => {
+      try {
+        const attendance = await prisma.attendance.findUnique({
+          where: {
+            id: Number(id),
+          }
+        });
+        return transformAttedance(attendance);
+      } catch (error) {
+        throw error;
+      }
+    },
   },
   Mutation: {
     createStudent: combineResolvers(isLoggedin, async (_, { studentInput }) => {
@@ -176,7 +188,7 @@ export const students = {
             signOutTime: new Date(),
           },
         });
-        return attendance;
+        return transformAttedance(attendance);
       } catch (error) {
         throw error;
       }

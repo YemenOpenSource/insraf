@@ -2,9 +2,13 @@
 import tw from "tailwind-styled-components";
 import clsx from "clsx";
 import { useState, useContext } from "react";
-import { TruckIcon } from "@heroicons/react/20/solid";
+import { XCircleIcon } from "@heroicons/react/20/solid";
 import { Slider, Login, Attedance, Logout } from "@/components/student";
-import { LOGIN_STUDENT } from "@/hooks/mutations";
+import {
+  LOGIN_STUDENT,
+  SIGN_IN_ATTENDANCE,
+  SIGN_OUT_ATTENDANCE,
+} from "@/hooks/mutations";
 import { useMutation } from "@apollo/client";
 import { AuthContext } from "@/contexts";
 
@@ -25,21 +29,45 @@ export default function page() {
   const [step, setStep] = useState(0);
   const [token, setToken] = useState();
   const [disabled, setDisabled] = useState(false);
-  const { id, setId } = useContext(AuthContext);
+  const [alert, setAlert] = useState({ error: false, message: "" });
+  const [attedance, setAttedance] = useState(false);
+  const [signOutTime, setSignOutTime] = useState('-');
+  const { id, setId, idAttedance, setIdAttedance } = useContext(AuthContext);
 
   const group = [
     <Slider />,
     <Login token={setToken} />,
-    <Attedance />,
-    <Logout />,
+    <Attedance attedance={setAttedance} />,
+    <Logout idAttedance={idAttedance} signOutTime={signOutTime}/>,
   ];
 
   const [login] = useMutation(LOGIN_STUDENT, {
     onCompleted: (data) => {
       setId(data.loginStudent.id);
+      setStep(step + 1);
       setDisabled(false);
     },
-    onError: (error) => setDisabled(true),
+    onError: (error) => {
+      setDisabled(true);
+      setAlert({ ...alert, error: true, message: error.message });
+    },
+  });
+
+  const [attedances] = useMutation(SIGN_IN_ATTENDANCE, {
+    onCompleted: (data) => {
+      setIdAttedance(data.signInAttendance.id);
+      setStep(step + 1);
+      setDisabled(false);
+    },
+    onError: (error) => {
+      setDisabled(true);
+      setAlert({ ...alert, error: true, message: error.message });
+    },
+  });
+
+  const [signOut] = useMutation(SIGN_OUT_ATTENDANCE, {
+    onCompleted: (data) => setSignOutTime(data.signOutAttendance.signOutTime),
+    onError: (error) => console.log(error),
   });
 
   function renderMarkers() {
@@ -64,23 +92,23 @@ export default function page() {
     <Container>
       <div className="flex justify-center">{renderMarkers()}</div>
       <Card>
-        {id != "no auth" && (
-          <div className="bg-green-500 p-4 mt-4">
+        {alert.error && (
+          <div className="bg-red-500 p-4 mt-4">
             <div className="flex">
               <div className="flex-shrink-0">
-                <TruckIcon
+                <XCircleIcon
                   className="h-5 w-5 text-white"
                   aria-hidden="true"
                 />
               </div>
               <div className="ml-3">
-                <h3 className="text-sm text-white font-bolder mr-2">تسجيل الدخول</h3>
+                <h3 className="text-sm text-white font-bolder mr-2">خطأ</h3>
                 <div className="mt-2 text-sm text-white font-bolder">
                   <ul
                     role="list"
                     className="list-disc space-y-1 pl-5 font-regular"
                   >
-                    <li>تم تسجيل الدخول بنجاح</li>
+                    <li>{alert.message}</li>
                   </ul>
                 </div>
               </div>
@@ -99,7 +127,18 @@ export default function page() {
                     </Button>
                   )}
                   {step === group.length - 1 && (
-                    <Button $color="blue">خروج</Button>
+                    <Button
+                      $color="blue"
+                      onClick={() => {
+                        signOut({
+                          variables: {
+                            signOutAttendanceId: idAttedance,
+                          },
+                        });
+                      }}
+                    >
+                      خروج
+                    </Button>
                   )}
                   {step < group.length - 1 && step != 1 && step != 2 && (
                     <Button $color="blue" onClick={() => setStep(step + 1)}>
@@ -116,7 +155,6 @@ export default function page() {
                             token: token,
                           },
                         });
-                        setStep(step + 1);
                       }}
                     >
                       دخول
@@ -124,9 +162,17 @@ export default function page() {
                   )}
                   {step == 2 && (
                     <Button
-                      disabled={id == "no auth"}
+                      disabled={id == "no auth" || disabled}
                       $color="blue"
-                      onClick={() => setStep(step + 1)}
+                      onClick={() => {
+                        attedances({
+                          variables: {
+                            subject: attedance[0],
+                            date: attedance[1],
+                            studentId: Number(id),
+                          },
+                        });
+                      }}
                     >
                       تحضير
                     </Button>

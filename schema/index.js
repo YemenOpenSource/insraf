@@ -104,6 +104,7 @@ export const typeDefs = gql`
     search(contains: String): [Student]
     searchAttendance(contains: String): [Attendance]
     statistics: Statistics
+    showAttendance(id: ID!): Attendance
   }
 
   type Mutation {

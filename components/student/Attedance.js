@@ -1,12 +1,18 @@
 "use client";
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { QrReader } from "react-qr-reader";
 import { XCircleIcon } from "@heroicons/react/20/solid";
 import { AuthContext } from "@/contexts";
 
-// Define a component to handle QR code scanning
-function QRScanner() {
+export default function Attedance(props) {
+  const { id } = useContext(AuthContext);
   const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    if(result?.text?.split(",")[0]) {
+      props.attedance(result?.text?.split(","));
+    }
+  }, [result]);
 
   // Function to handle scanning of QR code
   const handleScan = (data) => {
@@ -21,20 +27,6 @@ function QRScanner() {
   };
 
   // Render the QR reader component with appropriate props
-  return (
-    <QrReader
-      delay={300}
-      constraints={{ facingMode: "environment" }}
-      onError={handleError}
-      onResult={handleScan}
-      style={{ width: "100%" }}
-    />
-  );
-}
-
-export default function Attedance() {
-  const { id } = useContext(AuthContext);
-
   if (id == "no auth") {
     return (
       <div className="bg-blue-700 p-4 my-4">
@@ -58,7 +50,13 @@ export default function Attedance() {
   return (
     <div className="sm:mx-auto sm:w-full sm:max-w-md p-3 sm:p-0 selection:bg-blue-700 selection:text-white mt-4">
       <div>
-        <QRScanner />
+        <QrReader
+          delay={300}
+          constraints={{ facingMode: "environment" }}
+          onError={handleError}
+          onResult={handleScan}
+          style={{ width: "100%" }}
+        />
         <div className="mt-2">
           <input
             type="email"
@@ -66,6 +64,7 @@ export default function Attedance() {
             id="email"
             className="block w-full font-regular rounded-md outline-none my-4 text-center border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             placeholder="اسم المادة"
+            value={result?.text?.split(",")[0]}
             disabled
           />
         </div>

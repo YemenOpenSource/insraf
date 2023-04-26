@@ -82,3 +82,22 @@ export const LOGIN_STUDENT = gql`
     }
   }
 `;
+
+export const SIGN_IN_ATTENDANCE = gql`
+  mutation SignInAttendance($subject: String, $date: String, $studentId: Int) {
+    signInAttendance(
+      attendanceInput: { subject: $subject, date: $date }
+      studentId: $studentId
+    ) {
+      id
+    }
+  }
+`;
+
+export const SIGN_OUT_ATTENDANCE = gql`
+  mutation Mutation($signOutAttendanceId: ID!) {
+    signOutAttendance(id: $signOutAttendanceId) {
+      signOutTime
+    }
+  }
+`;

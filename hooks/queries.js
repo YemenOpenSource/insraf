@@ -114,6 +114,15 @@ export const STATISTICS_QUERY = gql`
   }
 `;
 
+export const SHOW_ATTENDANCE = gql`
+  query Query($showAttendanceId: ID!) {
+    showAttendance(id: $showAttendanceId) {
+      subject
+      signInTime
+    }
+  }
+`;
+
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {

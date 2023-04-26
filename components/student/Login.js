@@ -98,6 +98,15 @@ export default function Attedance(props) {
           ))}
         </div>
       </RadioGroup>
+      {data != "No result" && (
+          <div className="bg-green-500 p-4 mt-4">
+            <div className="flex">
+              <div className="ml-3">
+                <h3 className="text-sm text-white font-bolder mr-2">تم مسح QR</h3>
+              </div>
+            </div>
+          </div>
+        )}
       <QrReader
         {...qrReaderProps}
         videoId={useId()}
