@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Container from "./ContainerLoading";
-import screenshotContacts from "@/public/images/screenshots/soon.png";
-import screenshotInventory from "@/public/images/screenshots/soon.png";
-import screenshotProfitLoss from "@/public/images/screenshots/soon.png";
+import screenshotContacts from "@/public/images/screenshots/four.png";
+import screenshotInventory from "@/public/images/screenshots/three.png";
+import screenshotProfitLoss from "@/public/images/screenshots/two.png";
 import Button from "./Button";
 import { Tab } from "@headlessui/react";
 
