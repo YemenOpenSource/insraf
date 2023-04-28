@@ -142,7 +142,7 @@ export default function SecondaryFeatures() {
             تطبيق ويب مخصص لطالب لإدارة التحضير
           </p>
           <div className="my-5 flex justify-center">
-            <Button href="/student/login">
+            <Button href="/student">
               تجربة تطبيق الطالب
             </Button>
           </div>
