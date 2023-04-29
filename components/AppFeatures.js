@@ -9,7 +9,7 @@ import { Tab } from "@headlessui/react";
 
 const features = [
   {
-    name: "🦜 تسجيل الدخول",
+    name: "🏆 تسجيل الدخول",
     summary: "Stay on top of things with always up-to-date reporting features.",
     description: "تسجيل الدخول بواسطة مسح بطاقة الجامعية",
     image: screenshotProfitLoss,
@@ -20,7 +20,7 @@ const features = [
     image: screenshotInventory,
   },
   {
-    name: "✅ وقت الخروج",
+    name: "📌 وقت الخروج",
     summary:
       "Organize all of your contacts, service providers, and invoices in one place.",
     description: "وقت خروج الطالب من القاعة",

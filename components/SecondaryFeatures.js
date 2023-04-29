@@ -9,7 +9,7 @@ import { useId } from "react";
 
 const features = [
   {
-    name: "إضافة طالب 🪓🐪",
+    name: "إضافة طالب 🐪",
     summary: "Stay on top of things with always up-to-date reporting features.",
     description:
       "إضافة طالب في قاعدة البيانات",
