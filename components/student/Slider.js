@@ -2,14 +2,21 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import insarf_welcome from "@/public/insarf_welcome.svg";
 import insarf_one from "@/public/insarf_1.svg";
-import insarf_two from "@/public/insarf_2.svg";
-import insarf_three from "@/public/insarf_3.svg";
+import slider_two from "@/public/images/slider/2.png";
+import slider_three from "@/public/images/slider/3.png";
+import slider_four from "@/public/images/slider/4.png";
 import { ArrowLeft, ArrowRight } from "react-iconly";
 
 export default function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const images = [insarf_welcome, insarf_one];
+  const images = [
+    insarf_welcome,
+    insarf_one,
+    slider_two,
+    slider_three,
+    slider_four,
+  ];
 
   const imageContainerRef = useRef();
 
