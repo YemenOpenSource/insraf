@@ -50,6 +50,15 @@ export const typeDefs = gql`
     attendanceAbsenceCount: Int
   }
 
+  type AttendanceStudent {
+    subject: String
+    _count: CountAll
+  }
+
+  type CountAll {
+    _all: Int
+  }
+
   type AuthData {
     userId: ID!
     token: String!
@@ -105,6 +114,7 @@ export const typeDefs = gql`
     searchAttendance(contains: String): [Attendance]
     statistics: Statistics
     showAttendance(id: ID!): Attendance
+    attendanceStudent(studentId: ID!): [AttendanceStudent]
   }
 
   type Mutation {

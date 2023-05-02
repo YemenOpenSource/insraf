@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import { STUDENT_GET } from "@/hooks/queries";
+import { STUDENT_GET, ATTENDANCE_STUDENT } from "@/hooks/queries";
 import { DELETE_STUDENT } from "@/hooks/mutations";
 import { useRouter } from "next/navigation";
 import {
@@ -37,6 +37,10 @@ export default function page({ params }) {
     variables: { id: parseInt(params.id) },
   });
 
+  const { loading: load, error: err, data: subject } = useQuery(ATTENDANCE_STUDENT, {
+    variables: { studentId: parseInt(params.id) },
+  });
+
   const [deleteStudent] = useMutation(DELETE_STUDENT, {
     onCompleted: (data) => {
       router.push(`/admin/students`);
@@ -67,7 +71,7 @@ export default function page({ params }) {
                         او في الحالة الطبيعية
                         "
           />
-          <Attendance attendance={ibn} />
+          <Attendance attendance={subject?.attendanceStudent} />
         </div>
       </div>
     </React.Fragment>

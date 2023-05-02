@@ -108,12 +108,27 @@ export const students = {
         const attendance = await prisma.attendance.findUnique({
           where: {
             id: Number(id),
-          }
+          },
         });
         return transformAttedance(attendance);
       } catch (error) {
         throw error;
       }
+    },
+    attendanceStudent: async (_, { studentId }) => {
+      const result = await prisma.attendance.groupBy({
+        by: ["subject"],
+        where: {
+          studentId: Number(studentId),
+        },
+        select: {
+          subject: true,
+        },
+        _count: {
+          _all: true,
+        },
+      });
+      return result;
     },
   },
   Mutation: {

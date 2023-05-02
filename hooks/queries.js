@@ -123,6 +123,17 @@ export const SHOW_ATTENDANCE = gql`
   }
 `;
 
+export const ATTENDANCE_STUDENT = gql`
+  query AttendanceStudent($studentId: ID!) {
+    attendanceStudent(studentId: $studentId) {
+      subject
+      _count {
+        _all
+      }
+    }
+  }
+`;
+
 /* export const EVENTS = gql`
   ${EVENT_FIELDS}
   query Events($limit: Int, $offset: Int) {
