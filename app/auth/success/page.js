@@ -1,5 +1,5 @@
 "use client";
-import { Success } from "@/components";
+import { Success, Loading } from "@/components";
 import { useQuery } from "@apollo/client";
 import { GET_USER } from "@/hooks/queries";
 import { useRouter } from "next/navigation";
@@ -19,7 +19,7 @@ export default function page() {
     return router.push("/")
   }
 
-  if (loading) return;
+  if (loading) return <Loading />;
   if (error) return `Error! ${error}`;
 
   return (

@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import insarf_welcome from "@/public/insarf_welcome.svg";
-import insarf_one from "@/public/insarf_1.svg";
+import insarf_welcome from "@/public/insarf_welcome.png";
 import slider_two from "@/public/images/slider/2.png";
 import slider_three from "@/public/images/slider/3.png";
 import slider_four from "@/public/images/slider/4.png";
@@ -12,7 +11,6 @@ export default function Slider() {
 
   const images = [
     insarf_welcome,
-    insarf_one,
     slider_two,
     slider_three,
     slider_four,
