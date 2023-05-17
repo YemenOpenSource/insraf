@@ -6,6 +6,7 @@ import screenshotExpenses from "@/public/images/screenshots/expenses.png";
 import screenshotPayroll from "@/public/images/screenshots/payroll.png";
 import screenshotReporting from "@/public/images/screenshots/reporting.png";
 import screenshotVatReturns from "@/public/images/screenshots/vat-returns.png";
+import { AddUser } from "react-iconly";
 import { useEffect, useState } from "react";
 import { Tab } from "@headlessui/react";
 
