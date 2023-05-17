@@ -165,9 +165,7 @@ export const students = {
             contentType: "image/png",
             access: "public",
           });
-          console.log(blob)
         });
-
         return student;
       } catch (error) {
         throw error;
