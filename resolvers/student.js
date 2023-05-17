@@ -6,6 +6,9 @@ import { isLoggedin } from "@/middleware/isLoggedin";
 import { GraphQLError } from "graphql";
 import { combineResolvers } from "graphql-resolvers";
 import { transformAttedance } from "@/helper/transform";
+import { put } from "@vercel/blob";
+
+export const runtime = 'edge'
 
 export const students = {
   Gender: {
@@ -154,11 +157,17 @@ export const students = {
 
         // Generate the qr by using the register
         const data = jwt.sign(`${register},${password}`, process.env.JWT);
-        const qrDataURL = QRcode.toDataURL(data, function (err, url) {
+        const qrDataURL = QRcode.toDataURL(data, async function (err, url) {
           const qrImageBuffer = Buffer.from(url.split(",")[1], "base64");
           const qrImagePath = `public/qr/${register}.png`;
           fs.writeFileSync(qrImagePath, qrImageBuffer);
+          const blob = await put(qrImagePath,  qrImagePath.split("/")[2], {
+            contentType: "image/png",
+            access: "public",
+          });
+          console.log(blob)
         });
+
         return student;
       } catch (error) {
         throw error;

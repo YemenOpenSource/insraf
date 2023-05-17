@@ -16,7 +16,7 @@
 /build
 
 # images
-/public/qr
+# /public/qr
 
 # misc
 .DS_Store
