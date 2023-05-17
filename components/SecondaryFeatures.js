@@ -5,32 +5,32 @@ import screenshotContacts from "@/public/images/screenshots/contacts.png";
 import screenshotInventory from "@/public/images/screenshots/inventory.png";
 import screenshotProfitLoss from "@/public/images/screenshots/profit-loss.png";
 import { Tab } from "@headlessui/react";
-import { useId } from "react";
+import { AddUser, ShieldDone, Heart2 } from "react-iconly";
 
 const features = [
   {
-    name: "إضافة طالب 🐪",
+    name: "إضافة طالب",
     summary: "Stay on top of things with always up-to-date reporting features.",
     description: "إضافة طالب في قاعدة البيانات",
     image: screenshotProfitLoss,
-    icon: "👷‍♂️",
+    icon: AddUser,
   },
   {
-    name: "إضافة القسم والمستوى🚀",
+    name: "إضافة القسم والمستوى",
     summary:
       "Never lose track of what’s in stock with accurate inventory tracking.",
     description: "تقسيم الطالب وفقاً لقسم والمستوى",
     image: screenshotInventory,
-    icon: "📜",
+    icon: ShieldDone,
   },
   {
-    name: "بطاقة إنصراف 📝",
+    name: "بطاقة إنصراف",
     summary:
       "Organize all of your contacts, service providers, and invoices in one place.",
     description:
       "يتم توليد بطاقة إنصراف ليستخدمها الطالب  لعملية دخول الطالب في التطبيق",
     image: screenshotContacts,
-    icon: "👋",
+    icon: Heart2,
   },
 ];
 
@@ -43,10 +43,10 @@ function Feature({ feature, isActive, className, ...props }) {
       <div
         className={clsx(
           "w-[50px] h-[50px] rounded-lg flex justify-center items-center",
-          isActive ? "bg-blue-700" : "bg-blue-50"
+          isActive ? "bg-blue-700" : "bg-blue-500"
         )}
       >
-        {feature.icon}
+        <feature.icon primaryColor="white" stroke="bold" size="medium" />
       </div>
       <h3
         className={clsx(
